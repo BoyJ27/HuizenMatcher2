@@ -308,7 +308,9 @@ var HousingModel = function( options ){
   this.createUser                 = createUser;
   this.updateUser                 = updateUser;
 
-  this.houses                     = houses;
+  this.getHouses = function(a,b) {
+    return houses[a][b]; // Exposes the b attribute for house a
+  }
 
   this.setAgqQuestions            = setAgqQuestions;
   this.setCity                    = setCity;
