@@ -1,5 +1,12 @@
 var HousingModel = function( options ){
 
+  // The houses [price, surface, number of rooms]
+  var houseA = [250000, 80, 3];
+  var houseB = [300000, 120, 5];
+
+  // The array containing both houses
+  var houses = [houseA, houseB];
+
   /***********************************************************
                Options
   ***********************************************************/
@@ -301,6 +308,7 @@ var HousingModel = function( options ){
   this.createUser                 = createUser;
   this.updateUser                 = updateUser;
 
+  this.houses                     = houses;
 
   this.setAgqQuestions            = setAgqQuestions;
   this.setCity                    = setCity;
