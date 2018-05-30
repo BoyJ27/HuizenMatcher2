@@ -5,13 +5,13 @@ var Dilemma1View = function (model, container) {
   ***************************/
 
   // Variables holding the attributes
-  var houseA1 = model.getHouses(0, 0);
-  var houseA2 = model.getHouses(0, 1);
-  var houseA3 = model.getHouses(0, 2);
+  var houseA1 = model.getHouses(0, 0, 0);
+  var houseA2 = model.getHouses(0, 0, 1);
+  var houseA3 = model.getHouses(0, 0, 2);
 
-  var houseB1 = model.getHouses(1, 0);
-  var houseB2 = model.getHouses(1, 1);
-  var houseB3 = model.getHouses(1, 2);
+  var houseB1 = model.getHouses(0, 1, 0);
+  var houseB2 = model.getHouses(0, 1, 1);
+  var houseB3 = model.getHouses(0, 1, 2);
 
   /***************************
   END TESTING VARIABLES
