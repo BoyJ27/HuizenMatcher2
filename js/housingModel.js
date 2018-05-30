@@ -47,12 +47,12 @@ var HousingModel = function( options ){
   shuffleHouses = function(array){
     console.log("Shuffling dilemma's...");
     console.log("Index 0, 0, 0 before shuffle: "+houses[0][0][0]);
-    var currentIndex = array.length;
+    var currentIndex = array.length; // Start at the end of the array
 
     console.log("current index = "+currentIndex);
     var temporaryValue, randomIndex;
 
-      // While there remain elements to shuffle...
+      // While there are still array elements left
       while ( 0 !== currentIndex ) {
         //Pick a remaining element...
         randomIndex = Math.floor( Math.random() * currentIndex );
