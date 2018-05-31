@@ -97,9 +97,6 @@
                 <div id="setA" >
                 </div>
 
-                <div id="setB" >
-                </div>
-
                 <div id="evaluationQuestions">
                 </div>
 
@@ -170,9 +167,6 @@
 
         <script src="js/view/setAView.js"></script>
         <script src="js/controller/setAController.js"></script>
-
-        <script src="js/view/setBView.js"></script>
-        <script src="js/controller/setBController.js"></script>
 
         <script src="js/view/evaluationView.js"></script>
         <script src="js/controller/evaluationController.js"></script>

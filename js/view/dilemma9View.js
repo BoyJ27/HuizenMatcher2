@@ -1,5 +1,5 @@
 var Dilemma9View = function (model, container) {
-  var h1 = $("<p>Elementen: Korte zin ter herhaling instructie, tabel met huizen, radiobuttons, volgende knop</p>");
+  var h1 = $("<p>Kies het huis welke het beste bij uw voorkeuren past.</p>");
   var volgendeButtonCont		= $("<center></center>");
   var volgendeButton    = $( "<a class='btn button btn-default pull-right' role='button'>Volgende &raquo;</a>" );
   var clearfix          = $( '<div class="clearfix">' );

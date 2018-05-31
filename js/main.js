@@ -50,9 +50,6 @@ $(function(){
 	var setAView				= new SetAView( housingModel, $( "#setA" ) );
 	var setBController 			= new SetAController( housingModel, setAView );
 
-	var setBView				= new SetBView( housingModel, $( "#setB" ) );
-	var setBController 			= new SetBController( housingModel, setBView );
-
 	var evaluationView		= new EvaluationView( housingModel, $( "#evaluationQuestions" ) );
 	var evaluationController = new EvaluationController ( housingModel, evaluationView );
 

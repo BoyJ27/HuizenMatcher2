@@ -1,7 +1,7 @@
 var EvaluationView = function (model, container){
 
 	var questionList			= $( "<div class='list-group' id='setQuestions'>" );
-	var p 						= $("<p>Elementen: Samenvatting 2 sets, radiobuttons.</p>");
+	var p 						= $("<p>Geef aan in hoeverre u het eens bent met de volgende stellingen. Hou hierbij de suggesties die u zojuist heeft gezien in gedachten.</p>");
 	var h3						= $("<p><b>Houd je ervaring met het spelen van daarnet in gedachten, en geef voor elke onderstaande uitspraak aan in welke mate je het ermee eens bent.</b></p>")
 	var volgendeButtonCont		= $("<center></center>");
 	var volgendeButton	 		= $( "<a class='btn button btn-default pull-right' id='extramargin' role='button'>Volgende &raquo;</a>" );
@@ -11,26 +11,11 @@ var EvaluationView = function (model, container){
 	var Table 					= $("<table id='answertable' style='width: 100%'></table>");
 
 	var questions = [
-		'Ik probeer het spel helemaal onder de knie te krijgen.',
-		'Ik ben volledig bezig met het spel.',
-		'Ik streef ernaar om het spel goed te doen vergeleken met anderen.',
-		'Mijn doel is om zoveel mogelijk te leren in dit spel.',
-		'Ik vind dat ik goed ben in het spel.',
-		'Ik probeer goed te presteren ten opzichte van andere spelers.',
-		'Ik probeer te voorkomen dat ik minder leer dan ik zou kunnen in het spel.',
-		'Ik heb het gevoel dat ik van alles kan ontdekken in het spel.',
-		'Ik behaal snel het doel van het spel.',
-		'Mijn doel is om te voorkomen dat ik slecht speel vergeleken met anderen.',
-		'Ik streef ernaar om het spel zo volledig mogelijk te begrijpen.',
-		'Ik vind het spel uitdagend.',
-		'Mijn doel is om beter te spelen dan anderen.',
-		'Mijn doel is om te voorkomen dat ik minder leer dan mogelijk in het spel.',
-		'Ik concentreer me erg tijdens het spelen.',
-		'Ik streef ernaar om te voorkomen dat ik slechter presteer dan andere spelers.',
-		'Ik voel tijdsdruk tijdens het spelen.',
-		'Ik streef ernaar om een onvolledig begrip van het spel te voorkomen.',
-		'Ik doe veel moeite in het spel.',
-		'Ik probeer te voorkomen dat ik het slechter doe dan andere spelers.'
+		'De suggesties passen bij mijn voorkeuren.',
+		'Er worden te veel slechte suggesties gedaan.',
+		'De voorgestelde huizen zijn aantrekkelijk.',
+		'Ik vind geen enkele van de voorgestelde huizen interessant.',
+		'De voorgestelde huizen zijn relevant.'
 	]
 
 	questionList.empty();
@@ -63,7 +48,7 @@ var EvaluationView = function (model, container){
 
 	volgendeButtonCont.append(volgendeButton);
 
-	container.append(p, volgendeButtonCont, clearfix );
+	container.append(p, Table, volgendeButtonCont, clearfix );
 
 
 	/***********************************************************
@@ -80,7 +65,7 @@ var EvaluationView = function (model, container){
 
 	this.update = function( args ){
 
-		if( args == 'setBDone' ){
+		if( args == 'setADone' ){
 			container.show();
 		}
 

@@ -29,7 +29,7 @@ var HeaderView = function ( model, container ){
 	this.update = function( args ){
 
 		if( args == "consentDone" ){
-			h2.html( "Waar wilt u zoeken?");
+			h2.html( "Waar bent u naar op zoek?");
 		}
 
 		if( args == "initialPreferencesDone" ){
@@ -66,17 +66,14 @@ var HeaderView = function ( model, container ){
 			h2.html( "Dilemma 10/10");
 		}
 		if( args == "dilemma10Done" ){
-			h2.html( "Uw persoonlijke profiel");
+			h2.html( "Uw persoonlijke voorkeuren");
 		}
 		if( args == "profileDone" ){
-			h2.html( "Uw persoonlijke aanbevelingen - set A");
+			h2.html( "Suggesties van het systeem");
 		}
 
 		if( args == "setADone" ){
-			h2.html( "Uw persoonlijke aanbevelingen - set B");
-		}
-		if( args == "setBDone" ){
-			h2.html( "Uw persoonlijke aanbevelingen");
+			h2.html( "Evaluatie");
 		}
 
 		if( args == "evaluationDone"){

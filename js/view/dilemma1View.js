@@ -1,6 +1,6 @@
 var Dilemma1View = function (model, container) {
 
-  var h1 = $("<p>Kies het huis welke het beste bij uw voorkeuren past.</p> <p>tabel met huizen, radiobuttons, volgende knop</p>");
+  var h1 = $("<p>Kies het huis welke het beste bij uw voorkeuren past.</p>");
   var volgendeButtonCont		= $("<center></center>");
   var volgendeButton    = $( "<a class='btn button btn-default pull-right' role='button'>Volgende &raquo;</a>" );
   var clearfix          = $( '<div class="clearfix">' );
