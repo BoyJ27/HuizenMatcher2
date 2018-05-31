@@ -10,6 +10,53 @@ body{
 	padding-top:0px;
 }
 
+.lastrow {
+	background-color: #F6F9F9;
+}
+
+.lastrow.centercell {
+	background-color: white;
+}
+
+.case {
+	width: 100%;
+	background-color: #d9d9d9;
+	text-align:center;
+}
+
+.centercell {
+	background-color: #e6e6e6;
+}
+
+.centercell:hover {
+	background-color: #f2f2f2;
+}
+
+th.centercell {
+	background-color: black;
+	width: 30%;
+}
+
+
+th {
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color: black;
+	color: white;
+}
+
+tr:hover {
+	background-color: #f2f2f2;
+}
+
+td {
+	padding:5px;
+}
+
+#dilemmaCont {
+	padding: 15px
+}
+
 a {
 	cursor:pointer;
 }
@@ -21,6 +68,7 @@ a {
 	font-size: 20px;
 	top: 8px;
 }
+
 h1{
 	font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
 	font-size: 30px;

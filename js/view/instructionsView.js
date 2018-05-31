@@ -5,14 +5,17 @@ var InstructionsView = function (model, container){
   var volgendeButtonCont		= $("<center></center>");
 	var volgendeButton	 	= $( "<a class='btn button btn-default pull-right' id='extramargin' role='button'>Volgende &raquo;</a>" );
 	var clearfix			= $('<div class="clearfix">' );
+  //TESTBUTTON
+  var testButton = $("<a class='btn button btn-default pull-right' role='button'>Shuffle</a>");
 
   volgendeButtonCont.append(volgendeButton);
-  container.append(p1, volgendeButtonCont, clearfix);
+  container.append(p1, testButton, volgendeButtonCont, clearfix);
 
 
   model.addObserver( this );
   this.volgendeButton = volgendeButton;
-
+  this.testButton = testButton;
+  
 	this.update = function( args ){
 
 		if( args == "initialPreferencesDone" ){

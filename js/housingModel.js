@@ -20,34 +20,59 @@ var HousingModel = function( options ){
   var currentUserId, value, geslacht, consent, email, satisfactionQuestions, args,
     stepCounter = 0, leeftijd = 0;
 
+  // The houses [price, surface, number of rooms]
+  var houseA = [250000, 80, 3];
+  var houseB = [300000, 120, 5];
+  var houseC = [150000, 40, 2];
+  var houseD = [155000, 45, 2];
+  var houseE = [400000, 200, 5];
+  var houseF = [350000, 150, 5];
+  var houseG = [200000, 70, 3];
+  var houseH = [180000, 55, 2];
+
+  // The arrays containing the dilemma's of houses
+  var dilemma1 = [houseA, houseB];
+  var dilemma2 = [houseC, houseD];
+  var dilemma3 = [houseE, houseF];
+  var dilemma4 = [houseG, houseH];
+
+  // The array containing the dilemmas
+  var houses = [dilemma1, dilemma2, dilemma3, dilemma4];
 
   /***********************************************************
             Helper Functions
   ***********************************************************/
 
-  /* Array shuffle function
-  shuffle = function( array ){
-    var currentIndex = array.length,
-    temporaryValue, randomIndex;
+  // Shuffle the dilemma's Array
+  shuffleHouses = function(array){
+    console.log("Shuffling dilemma's...");
+    console.log("Index 0, 0, 0 before shuffle: "+houses[0][0][0]);
+    console.log("Dilemma at start before shuffle: "+houses[0]);
+    var currentIndex = array.length; // Start at the end of the array
 
-      // While there remain elements to shuffle...
+    console.log("current index = "+currentIndex);
+    var temporaryValue, randomIndex;
+
+      // While there are still array elements left
       while ( 0 !== currentIndex ) {
-        // Pick a remaining element...
+        //Pick a remaining element...
         randomIndex = Math.floor( Math.random() * currentIndex );
         currentIndex -= 1;
 
-        // And swap it with the current element.
+        //And swap it with the current element
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
       }
+      console.log("Index 0, 0, 0 after shuffle: "+houses[0][0][0]);
+      console.log("Dilemma at start after shuffle: "+houses[0]);
       return array;
   }
-  */
 
   /***********************************************************
             Private Functions
   ***********************************************************/
+
 
   // Create the user, add it to the database, and assign the
   // experimental condition.
@@ -297,6 +322,13 @@ var HousingModel = function( options ){
   this.createUser                 = createUser;
   this.updateUser                 = updateUser;
 
+  this.getHouses = function(a,b,c) {
+    return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
+  }
+
+  this.houses                     = houses;
+
+  this.shuffleHouses              = shuffleHouses;
 
   this.setAgqQuestions            = setAgqQuestions;
   this.setCity                    = setCity;
