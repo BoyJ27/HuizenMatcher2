@@ -66,10 +66,10 @@ var HeaderView = function ( model, container ){
 			h2.html( "Dilemma 10/10");
 		}
 		if( args == "dilemma10Done" ){
-			h2.html( "Uw persoonlijke voorkeuren");
+			h2.html( "Suggesties van het systeem");
 		}
 		if( args == "profileDone" ){
-			h2.html( "Suggesties van het systeem");
+			h2.html( "Hartelijk Dank!");
 		}
 
 		if( args == "setADone" ){
@@ -77,7 +77,7 @@ var HeaderView = function ( model, container ){
 		}
 
 		if( args == "evaluationDone"){
-			h2.html( "Hartelijk Dank!");
+			h2.html( "Evaluatie");
 		}
 
 	}

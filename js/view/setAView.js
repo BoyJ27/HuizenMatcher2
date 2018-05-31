@@ -14,7 +14,7 @@ var SetAView = function (model, container){
 
 	this.update = function( args ){
 
-		if( args == "profileDone" ){
+		if( args == "dilemma10Done" ){
 			container.show();
 		}
     if( args == "setADone"){

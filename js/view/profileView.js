@@ -59,7 +59,7 @@ var ProfileView = function (model, container){
 
 	this.update = function( args ){
 
-		if( args == "dilemma10Done" ){
+		if( args == "evaluationDone" ){
 			container.show();
 		}
     if( args == "profileDone"){

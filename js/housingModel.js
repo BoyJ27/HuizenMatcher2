@@ -276,10 +276,6 @@ var HousingModel = function( options ){
     notifyObservers("setADone");
   }
 
-  setBDone = function(){
-    notifyObservers("setBDone");
-  }
-
   evaluationDone = function(){
     notifyObservers("evaluationDone");
   }
@@ -329,8 +325,7 @@ var HousingModel = function( options ){
   this.dilemma9Done         = dilemma9Done;
   this.dilemma10Done        = dilemma10Done;
   this.setADone             = setADone;
-  this.setBDone             = setBDone;
-  this.profileDone          = profileDone;
+ this.profileDone          = profileDone;
   this.experimentEnd        = experimentEnd;
 
   /***********************************************************

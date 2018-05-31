@@ -10,7 +10,7 @@ var EndView = function (model, container){
 
 	this.update = function( args ){
 
-		if( args == "evaluationDone" ){
+		if( args == "profileDone" ){
 			container.show();
 		}
 	}
