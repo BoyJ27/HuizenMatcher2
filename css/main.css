@@ -10,12 +10,10 @@ body{
 	padding-top:0px;
 }
 
-.lastrow {
+#lastrow {
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background-color: #F6F9F9;
-}
-
-.lastrow.centercell {
-	background-color: white;
 }
 
 .case {
@@ -26,10 +24,6 @@ body{
 
 .centercell {
 	background-color: #e6e6e6;
-}
-
-.centercell:hover {
-	background-color: #f2f2f2;
 }
 
 th.centercell {
@@ -43,10 +37,6 @@ th {
 	padding-bottom:5px;
 	background-color: black;
 	color: white;
-}
-
-tr:hover {
-	background-color: #f2f2f2;
 }
 
 td {
