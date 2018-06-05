@@ -31,10 +31,11 @@ var HousingModel = function( options ){
   var houseH = [180000, 55, 2];
 
   // The arrays containing the dilemma's of houses
-  var dilemma1 = [houseA, houseB];
-  var dilemma2 = [houseC, houseD];
-  var dilemma3 = [houseE, houseF];
-  var dilemma4 = [houseG, houseH];
+  // index 0 = house A, index 1 = house B, index 2 = no. dilemma
+  var dilemma1 = [houseA, houseB, 1];
+  var dilemma2 = [houseC, houseD, 1];
+  var dilemma3 = [houseE, houseF, 1];
+  var dilemma4 = [houseG, houseH, 1];
 
   // The array containing the dilemmas
   var houses = [dilemma1, dilemma2, dilemma3, dilemma4];
@@ -47,7 +48,7 @@ var HousingModel = function( options ){
   shuffleHouses = function(array){
     console.log("Shuffling dilemma's...");
     console.log("Index 0, 0, 0 before shuffle: "+houses[0][0][0]);
-    console.log("Dilemma at start before shuffle: "+houses[0]);
+    console.log("Dilemma at start before shuffle: "+houses[0][2]);
     var currentIndex = array.length; // Start at the end of the array
 
     console.log("current index = "+currentIndex);
@@ -65,7 +66,7 @@ var HousingModel = function( options ){
         array[randomIndex] = temporaryValue;
       }
       console.log("Index 0, 0, 0 after shuffle: "+houses[0][0][0]);
-      console.log("Dilemma at start after shuffle: "+houses[0]);
+      console.log("Dilemma at start after shuffle: "+houses[0][2]);
       return array;
   }
 
