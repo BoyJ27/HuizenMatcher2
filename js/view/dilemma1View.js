@@ -27,29 +27,29 @@ var Dilemma1View = function (model, container) {
       var houseA1 = model.getHouses(0, 0, 0);
       var houseA2 = model.getHouses(0, 0, 1);
       var houseA3 = model.getHouses(0, 0, 2);
-      var houseA4 = 0;
-      var houseA5 = 0;
-      var houseA6 = 0;
+      var houseA4 = model.getHouses(0, 0, 3);
+      var houseA5 = model.getHouses(0, 0, 4);
+      var houseA6 = model.getHouses(0, 0, 5);
 
       var houseB1 = model.getHouses(0, 1, 0);
       var houseB2 = model.getHouses(0, 1, 1);
       var houseB3 = model.getHouses(0, 1, 2);
-      var houseB4 = 0;
-      var houseB5 = 0;
-      var houseB6 = 0;
+      var houseB4 = model.getHouses(0, 1, 3);
+      var houseB5 = model.getHouses(0, 1, 4);
+      var houseB6 = model.getHouses(0, 1, 5);
 
       //Creating the table with house attributes
       // var table = $( "<table class='case'><tr><th>House A</th><th class='centercell'>Attributes</th><th>House B</th></tr><tr><td>"+houseA1+"</td><td class='centercell'>Price</td><td>"+houseB1+"</td></tr><tr><td>"+houseA2+"</td><td class='centercell'>Surface</td><td>"+houseB2+"</td></tr><tr><td>"+houseA3+"</td><td class='centercell'>No. of rooms</td><td>"+houseB3+"</td></tr><tr class='choiceRow'><td>House A: <input type='radio' name='choiceRadio' value='house A'></td><td>House B: <input type='radio' name='choiceRadio' value='house B'></td></tr><tr><td id='lastrow'></td><td id='lastrow'>No preference: <input type='radio' name='choiceRadio' value='neutral'></td><td id='lastrow'></td></tr></table>");
 
       var table = $( "<table class='case'></table>"); // The whole table
-      var headers = $( "<tr><th>House A</th><th class='centercell'>Attributes</th><th>House B</th></tr>" ); //The headers
-      var priceRow = $("<tr><td>"+houseA1+"</td><td class='centercell'>Price</td><td>"+houseB1+"</td></tr>"); // The attribute price
-      var typeRow = $("<tr><td>"+houseA2+"</td><td class='centercell'>Type</td><td>"+houseB2+"</td></tr>");
-      var surfaceRow = $("<tr><td>"+houseA3+"</td><td class='centercell'>Living surface</td><td>"+houseB3+"</td></tr>");
-      var bedroomRow = $("<tr><td>"+houseA4+"</td><td class='centercell'>No. of bedrooms</td><td>"+houseB4+"</td></tr>");
-      var surroundingsRow = $("<tr><td>"+houseA5+"</td><td class='centercell'>Built environment</td><td>"+houseB5+"</td></tr>");
-      var distanceRow = $("<tr><td>"+houseA6+"</td><td class='centercell'>Distance to lower school</td><td>"+houseB6+"</td></tr>");
-      var lastRow = $("<tr><td id = 'lastrow' >House A <input type='radio' name='choiceRadio' value='house A'></td><td id='lastrow'>No preference <input type='radio' name='choiceRadio' value='neutral'></td><td id='lastrow'>House B <input type='radio' name='choiceRadio' value='house B'></td></tr>");
+      var headers = $( "<tr><th>Huis A</th><th class='centercell'>Attributen</th><th>Huis B</th></tr>" ); //The headers
+      var priceRow = $("<tr><td>&euro;"+houseA1+"</td><td class='centercell'>Prijs</td><td>&euro;"+houseB1+"</td></tr>"); // The attribute price
+      var typeRow = $("<tr><td>"+houseA2+"</td><td class='centercell'>Woningtype</td><td>"+houseB2+"</td></tr>");
+      var surfaceRow = $("<tr><td>"+houseA3+"m<sup>2</sup></td><td class='centercell'>Woonoppervlakte</td><td>"+houseB3+"m<sup>2</sup></td></tr>");
+      var bedroomRow = $("<tr><td>"+houseA4+"</td><td class='centercell'>Slaapkamers</td><td>"+houseB4+"</td></tr>");
+      var surroundingsRow = $("<tr><td>"+houseA5+"</td><td class='centercell'>Bebouwde omgeving</td><td>"+houseB5+"</td></tr>");
+      var distanceRow = $("<tr><td>"+houseA6+" meter</td><td class='centercell'>Afstand tot basisschool</td><td>"+houseB6+" meter</td></tr>");
+      var lastRow = $("<tr><td id = 'lastrow' >Huis A <input type='radio' name='choiceRadio' value='house A'></td><td id='lastrow'>Geen voorkeur <input type='radio' name='choiceRadio' value='neutral'></td><td id='lastrow'>Huis B <input type='radio' name='choiceRadio' value='house B'></td></tr>");
 
       //Putting the rows into the Table
       table.append(headers, priceRow, typeRow, surfaceRow, bedroomRow, surroundingsRow, distanceRow, lastRow);

@@ -20,25 +20,97 @@ var HousingModel = function( options ){
   var currentUserId, value, geslacht, consent, email, satisfactionQuestions, args,
     stepCounter = 0, leeftijd = 0;
 
-  // The houses [price, surface, number of rooms]
-  var houseA = [250000, 80, 3];
-  var houseB = [300000, 120, 5];
-  var houseC = [150000, 40, 2];
-  var houseD = [155000, 45, 2];
-  var houseE = [400000, 200, 5];
-  var houseF = [350000, 150, 5];
-  var houseG = [200000, 70, 3];
-  var houseH = [180000, 55, 2];
+  // The houses [price, type, surface, bedrooms, surroundings, distance to school]
+  var house01 = [271000, "Rijtjeshuis", 114, 2, "Buitenwijk", 1000];
+  var house02 = [236000, "Rijtjeshuis", 114, 3, "Dorp", 370];
+  var house03 = [251000, "Appartement", 114, 3, "Stedelijk", 600];
+  var house04 = [181000, "Rijtjeshuis", 78, 2, "Buitenwijk", 1000];
+  var house05 = [170000, "Appartement", 78, 2, "Stedelijk", 370];
+  var house06 = [173000, "Rijtjeshuis", 78, 3, "Stedelijk", 370];
+  var house07 = [363000, "Vrijstaand", 165, 4, "Dorp", 600];
+  var house08 = [177000, "Rijtjeshuis", 78, 3, "Stedelijk", 600];
+  var house09 = [249000, "Vrijstaand", 114, 3, "Dorp", 370];
+  var house10 = [178000, "Vrijstaand", 78, 2, "Dorp", 600];
+  var house11 = [368000, "Rijtjeshuis", 165, 3, "Dorp", 1000];
+  var house12 = [173000, "Rijtjeshuis", 78, 3, "Stedelijk", 370];
+  var house13 = [388000, "Vrijstaand", 165, 4, "Stedelijk", 370];
+  var house14 = [173000, "Rijtjeshuis", 78, 3, "Stedelijk", 370];
+  var house15 = [355000, "Appartement", 165, 3, "Buitenwijk", 600];
+  var house16 = [189000, "Rijtjeshuis", 78, 2, "Stedelijk", 1000];
+  var house17 = [251000, "Appartement", 114, 3, "Stedelijk", 600];
+  var house18 = [175000, "Appartement", 78, 2, "Stedelijk", 600];
+  var house19 = [251000, "Appartement", 114, 3, "Stedelijk", 600];
+  var house20 = [181000, "Rijtjeshuis", 78, 2, "Buitenwijk", 1000];
+  var house21 = [273000, "Vrijstaand", 114, 3, "Stedelijk", 370];
+  var house22 = [186000, "Vrijstaand", 78, 2, "Buitenwijk", 600];
+  var house23 = [258000, "Appartement", 114, 3, "Stedelijk", 1000];
+  var house24 = [261000, "Appartement", 114, 2, "Stedelijk", 600];
+  var house25 = [420000, "Rijtjeshuis", 165, 2, "Stedelijk", 1000];
+  var house26 = [271000, "Rijtjeshuis", 114, 2, "Buitenwijk", 1000];
+  var house27 = [167000, "Appartement", 78, 2, "Buitenwijk", 600];
+  var house28 = [176000, "Rijtjeshuis", 78, 2, "Buitenwijk", 600];
+  var house29 = [272000, "Rijtjeshuis", 114, 3, "Stedelijk", 1000];
+  var house30 = [283000, "Rijtjeshuis", 114, 2, "Stedelijk", 1000];
+  var house31 = [388000, "Vrijstaand", 165, 4, "Stedelijk", 370];
+  var house32 = [168000, "Appartement", 78, 3, "Stedelijk", 600];
+  var house33 = [249000, "Rijtjeshuis", 114, 3, "Dorp", 1000];
+  var house34 = [183000, "Vrijstaand", 78, 2, "Dorp", 1000];
+  var house35 = [348000, "Appartement", 165, 4, "Stedelijk", 370];
+  var house36 = [388000, "Vrijstaand", 165, 4, "Stedelijk", 370];
+  var house37 = [279000, "Vrijstaand", 114, 2, "Buitenwijk", 600];
+  var house38 = [180000, "Rijtjeshuis", 78, 2, "Stedelijk", 370];
+  var house39 = [365000, "Appartement", 165, 3, "Buitenwijk", 1000];
+  var house40 = [164000, "Appartement", 78, 3, "Stedelijk", 370];
 
   // The arrays containing the dilemma's of houses
   // index 0 = house A, index 1 = house B, index 2 = no. dilemma
-  var dilemma1 = [houseA, houseB, 1];
-  var dilemma2 = [houseC, houseD, 2];
-  var dilemma3 = [houseE, houseF, 3];
-  var dilemma4 = [houseG, houseH, 4];
+  var dilemma01 = [house01, house02, 1];
+  var dilemma02 = [house03, house04, 2];
+  var dilemma03 = [house05, house06, 3];
+  var dilemma04 = [house07, house08, 4];
+  var dilemma05 = [house09, house10, 5];
+
+  var dilemma06 = [house11, house12, 6];
+  var dilemma07 = [house13, house14, 7];
+  var dilemma08 = [house15, house16, 8];
+  var dilemma09 = [house17, house18, 9];
+  var dilemma10 = [house19, house20, 10];
+
+  var dilemma11 = [house21, house22, 11];
+  var dilemma12 = [house23, house24, 12];
+  var dilemma13 = [house25, house26, 13];
+  var dilemma14 = [house27, house28, 14];
+  var dilemma15 = [house29, house30, 15];
+
+  var dilemma16 = [house31, house32, 16];
+  var dilemma17 = [house33, house34, 17];
+  var dilemma18 = [house35, house36, 18];
+  var dilemma19 = [house37, house38, 19];
+  var dilemma20 = [house39, house40, 20];
 
   // The array containing the dilemmas
-  var houses = [dilemma1, dilemma2, dilemma3, dilemma4];
+  var houses = [
+    dilemma01,
+    dilemma02,
+    dilemma03,
+    dilemma04,
+    dilemma05,
+    dilemma06,
+    dilemma07,
+    dilemma08,
+    dilemma09,
+    dilemma10,
+    dilemma11,
+    dilemma12,
+    dilemma13,
+    dilemma14,
+    dilemma15,
+    dilemma16,
+    dilemma17,
+    dilemma18,
+    dilemma19,
+    dilemma20
+  ];
 
   /***********************************************************
             Helper Functions
