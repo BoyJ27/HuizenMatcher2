@@ -22,7 +22,8 @@ body{
 	text-align:center;
 }
 
-.centercell {
+td.centercell {
+	width: 30%;
 	background-color: #e6e6e6;
 }
 
@@ -40,7 +41,9 @@ th {
 }
 
 td {
-	padding:5px;
+	width: 30%;
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 #dilemmaCont {

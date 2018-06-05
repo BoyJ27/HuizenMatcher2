@@ -89,6 +89,7 @@ var HousingModel = function( options ){
   var dilemma20 = [house39, house40, 20];
 
   // The array containing the dilemmas
+  // Index 0 = dilemma, index 1 = house, index 2 = attribute
   var houses = [
     dilemma01,
     dilemma02,
