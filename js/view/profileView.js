@@ -5,10 +5,11 @@ var ProfileView = function (model, container){
 
   var questions = [
 		'Prijs',
-		'Woonoppervlakte',
-		'Aantal kamers',
-		'Bouwjaar',
-		'Locatie'
+		'Woningtype',
+		'Woonoppervlak',
+		'Slaapkamers',
+		'Bebouwde omgeving',
+    'Afstand tot basisschool'
 	];
 
   var TableCont				= $("<div style='margin-top: 20px; margin-bottom: 20px; background-color: white; border-style: solid; border-color: lightgrey; border-width: 1px;'></div>");
@@ -25,12 +26,12 @@ var ProfileView = function (model, container){
 	volgendeButtonCont.append(volgendeButton);
 
   $.each(questions, function(index, value) {
-    if(index == 0 | index == 5 | index == 10 | index == 15) {
+    if(index == 0 | index == 7 | index == 10 | index == 15) {
       Table.append("<tr><th style='width: 50%'></th><th style='width: 10%; text-align:center; padding-top: 10px; padding-bottom: 10px'>Helemaal niet belangrijke</th><th style='width: 10%; text-align:center; padding-top: 10px; padding-bottom: 10px'>Niet echt belangrijk</th><th style='width: 10%; text-align:center; padding-top: 10px; padding-bottom: 10px'>Neutraal</th><th style='width: 10%; text-align:center; padding-top: 10px; padding-bottom: 10px'>Een beetje belangrijk</th><th style='width: 10%; text-align:center; padding-top: 10px; padding-bottom: 10px'>Heel belangrijk</th></tr>");
     }
     var row;
     if(index%2 == 0) {
-      row = $("<tr class='item-row' id='" + index + "' style='background-color:#FAFAFA'></tr>");
+      row = $("<tr class='item-row' id='" + index + "' style='background-color:#FFFFFF'></tr>");
     } else {
       row = $("<tr class='item-row' id='" + index + "'></tr>");
     }

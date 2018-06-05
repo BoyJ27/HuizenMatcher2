@@ -294,6 +294,50 @@ var HousingModel = function( options ){
     notifyObservers("dilemma10Done");
   }
 
+  breakDone = function() {
+    notifyObservers("breakDone");
+  }
+
+  dilemma11Done = function(){
+    notifyObservers("dilemma11Done");
+  }
+
+  dilemma12Done = function(){
+    notifyObservers("dilemma12Done");
+  }
+
+  dilemma13Done = function(){
+    notifyObservers("dilemma13Done");
+  }
+
+  dilemma14Done = function(){
+    notifyObservers("dilemma14Done");
+  }
+
+  dilemma15Done = function(){
+    notifyObservers("dilemma15Done");
+  }
+
+  dilemma16Done = function(){
+    notifyObservers("dilemma16Done");
+  }
+
+  dilemma17Done = function(){
+    notifyObservers("dilemma17Done");
+  }
+
+  dilemma18Done = function(){
+    notifyObservers("dilemma18Done");
+  }
+
+  dilemma19Done = function(){
+    notifyObservers("dilemma19Done");
+  }
+
+  dilemma20Done = function(){
+    notifyObservers("dilemma20Done");
+  }
+
   profileDone = function(){
     notifyObservers("profileDone");
   }
@@ -304,10 +348,6 @@ var HousingModel = function( options ){
 
   evaluationDone = function(){
     notifyObservers("evaluationDone");
-  }
-
-  experimentEnd = function(){
-    notifyObservers( "experimentEnd" );
   }
 
   screensizeOkay = function(){
@@ -357,9 +397,19 @@ var HousingModel = function( options ){
   this.dilemma8Done         = dilemma8Done;
   this.dilemma9Done         = dilemma9Done;
   this.dilemma10Done        = dilemma10Done;
+  this.dilemma11Done          = dilemma11Done;
+  this.dilemma12Done         = dilemma12Done;
+  this.dilemma13Done         = dilemma13Done;
+  this.dilemma14Done         = dilemma14Done;
+  this.dilemma15Done         = dilemma15Done;
+  this.dilemma16Done         = dilemma16Done;
+  this.dilemma17Done         = dilemma17Done;
+  this.dilemma18Done         = dilemma18Done;
+  this.dilemma19Done         = dilemma19Done;
+  this.dilemma20Done        = dilemma20Done;
   this.setADone             = setADone;
  this.profileDone          = profileDone;
-  this.experimentEnd        = experimentEnd;
+  this.breakDone            = breakDone;
 
   /***********************************************************
             Observable Pattern

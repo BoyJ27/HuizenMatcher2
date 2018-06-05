@@ -91,6 +91,39 @@
                 <div id="dilemma10" >
                 </div>
 
+                <div id="break" >
+                </div>
+
+                <div id="dilemma11" >
+                </div>
+
+                <div id="dilemma12" >
+                </div>
+
+                <div id="dilemma13" >
+                </div>
+
+                <div id="dilemma14" >
+                </div>
+
+                <div id="dilemma15" >
+                </div>
+
+                <div id="dilemma16" >
+                </div>
+
+                <div id="dilemma17" >
+                </div>
+
+                <div id="dilemma18" >
+                </div>
+
+                <div id="dilemma19" >
+                </div>
+
+                <div id="dilemma20" >
+                </div>
+
                 <div id="profile" >
                 </div>
 
@@ -159,8 +192,41 @@
         <script src="js/view/dilemma9View.js"></script>
         <script src="js/controller/dilemma9Controller.js"></script>
 
+        <script src="js/view/breakView.js"></script>
+        <script src="js/controller/breakController.js"></script>
+
         <script src="js/view/dilemma10View.js"></script>
         <script src="js/controller/dilemma10Controller.js"></script>
+
+        <script src="js/view/dilemma11View.js"></script>
+        <script src="js/controller/dilemma11Controller.js"></script>
+
+        <script src="js/view/dilemma12View.js"></script>
+        <script src="js/controller/dilemma12Controller.js"></script>
+
+        <script src="js/view/dilemma13View.js"></script>
+        <script src="js/controller/dilemma13Controller.js"></script>
+
+        <script src="js/view/dilemma14View.js"></script>
+        <script src="js/controller/dilemma14Controller.js"></script>
+
+        <script src="js/view/dilemma15View.js"></script>
+        <script src="js/controller/dilemma15Controller.js"></script>
+
+        <script src="js/view/dilemma16View.js"></script>
+        <script src="js/controller/dilemma16Controller.js"></script>
+
+        <script src="js/view/dilemma17View.js"></script>
+        <script src="js/controller/dilemma17Controller.js"></script>
+
+        <script src="js/view/dilemma18View.js"></script>
+        <script src="js/controller/dilemma18Controller.js"></script>
+
+        <script src="js/view/dilemma19View.js"></script>
+        <script src="js/controller/dilemma19Controller.js"></script>
+
+        <script src="js/view/dilemma20View.js"></script>
+        <script src="js/controller/dilemma20Controller.js"></script>
 
         <script src="js/view/profileView.js"></script>
         <script src="js/controller/profileController.js"></script>

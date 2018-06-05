@@ -14,7 +14,7 @@ var SetAView = function (model, container){
 
 	this.update = function( args ){
 
-		if( args == "dilemma10Done" ){
+		if( args == "initialPreferencesDone" ){
 			container.show();
 		}
     if( args == "setADone"){

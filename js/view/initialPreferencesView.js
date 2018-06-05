@@ -32,7 +32,7 @@ var InitialPreferencesView = function( model, container ){
 
 	this.update = function( args ){
 
-		if( args == "consentDone" ){
+		if( args == "dilemma20Done" ){
 			container.show();
 		}
 		if( args == 'initialPreferencesDone'){
