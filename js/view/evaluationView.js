@@ -26,7 +26,7 @@ var EvaluationView = function (model, container){
 		}
 		var row;
 		if(index%2 == 0) {
-			row = $("<tr class='item-row' id='" + index + "' style='background-color:#FAFAFA'></tr>");
+			row = $("<tr class='item-row' id='" + index + "' style='background-color:#FFFFFF'></tr>");
 		} else {
 			row = $("<tr class='item-row' id='" + index + "'></tr>");
 		}

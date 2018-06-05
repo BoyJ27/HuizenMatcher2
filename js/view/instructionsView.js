@@ -15,10 +15,10 @@ var InstructionsView = function (model, container){
   model.addObserver( this );
   this.volgendeButton = volgendeButton;
   this.testButton = testButton;
-  
+
 	this.update = function( args ){
 
-		if( args == "initialPreferencesDone" ){
+		if( args == "consentDone" ){
 			container.show();
 		}
     if( args == 'instructionsDone'){
