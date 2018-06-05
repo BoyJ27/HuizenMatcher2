@@ -12,9 +12,6 @@ var Dilemma1View = function (model, container) {
 
   var dilemma1Cont = $('<div id="dilemmaCont"></div>');
   // var instruction1 = $('<center><center>');
-
-
-
   // Appending the h1, instructions container and the button container to the main div
   container.append(h1, dilemma1Cont, volgendeButtonCont, clearfix);
 
@@ -39,8 +36,6 @@ var Dilemma1View = function (model, container) {
       var houseB6 = model.getHouses(0, 1, 5);
 
       //Creating the table with house attributes
-      // var table = $( "<table class='case'><tr><th>House A</th><th class='centercell'>Attributes</th><th>House B</th></tr><tr><td>"+houseA1+"</td><td class='centercell'>Price</td><td>"+houseB1+"</td></tr><tr><td>"+houseA2+"</td><td class='centercell'>Surface</td><td>"+houseB2+"</td></tr><tr><td>"+houseA3+"</td><td class='centercell'>No. of rooms</td><td>"+houseB3+"</td></tr><tr class='choiceRow'><td>House A: <input type='radio' name='choiceRadio' value='house A'></td><td>House B: <input type='radio' name='choiceRadio' value='house B'></td></tr><tr><td id='lastrow'></td><td id='lastrow'>No preference: <input type='radio' name='choiceRadio' value='neutral'></td><td id='lastrow'></td></tr></table>");
-
       var table = $( "<table class='case'></table>"); // The whole table
       var headers = $( "<tr><th>Huis A</th><th class='centercell'>Attributen</th><th>Huis B</th></tr>" ); //The headers
       var priceRow = $("<tr><td>&euro;"+houseA1+"</td><td class='centercell'>Prijs</td><td>&euro;"+houseB1+"</td></tr>"); // The attribute price
