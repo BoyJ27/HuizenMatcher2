@@ -109,7 +109,7 @@ var HeaderView = function ( model, container ){
 		}
 
 		if( args == "evaluationDone"){
-			h2.html( "Evaluatie");
+			h2.html( "Demografische vragen");
 		}
 
 	}
