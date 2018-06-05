@@ -33,9 +33,9 @@ var HousingModel = function( options ){
   // The arrays containing the dilemma's of houses
   // index 0 = house A, index 1 = house B, index 2 = no. dilemma
   var dilemma1 = [houseA, houseB, 1];
-  var dilemma2 = [houseC, houseD, 1];
-  var dilemma3 = [houseE, houseF, 1];
-  var dilemma4 = [houseG, houseH, 1];
+  var dilemma2 = [houseC, houseD, 2];
+  var dilemma3 = [houseE, houseF, 3];
+  var dilemma4 = [houseG, houseH, 4];
 
   // The array containing the dilemmas
   var houses = [dilemma1, dilemma2, dilemma3, dilemma4];
