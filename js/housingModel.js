@@ -269,6 +269,31 @@ var HousingModel = function( options ){
 
   }
 
+  setPreferences = function(cityval, budgetval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval) {
+    var city = cityval;
+    var budget = budgetval;
+    var type = typeval;
+    var surface = surfaceval;
+    var bedrooms = bedroomsval;
+    var surroundings = surroundingsval;
+    var distance = distanceval;
+
+    $.post("ajax/insertPreferences.php",
+      {
+        userId: currentUserId,
+        city: city,
+        budget: budget,
+        type: type,
+        surface: surface,
+        bedrooms: bedrooms,
+        surroundings: surroundings,
+        distance: distance,
+      }).done(function(){
+        console.log("The preferences are saved in the DB");
+      });
+
+  }
+
   setdilemma = function () {
     $.post("ajax/insertIntro.php",
       {
@@ -453,6 +478,7 @@ var HousingModel = function( options ){
 
   this.setAgqQuestions            = setAgqQuestions;
   this.setDemoQuestions            = setDemoQuestions;
+  this.setPreferences             = setPreferences;
   this.setCity                    = setCity;
   this.setdilemma                 = setdilemma;
   this.setGame                    = setGame;
