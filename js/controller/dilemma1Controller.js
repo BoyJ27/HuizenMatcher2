@@ -5,6 +5,7 @@ var Dilemma1Controller = function ( model, view ){
     // Check if participant selected a preference
     var checked = 0;
 
+    //Load in the attributes of the houses that were used in the dilemma
     var houseA2 = view.houseA2;
     var houseA3 = view.houseA3;
     var houseA4 = view.houseA4;
@@ -19,7 +20,7 @@ var Dilemma1Controller = function ( model, view ){
 
     //Look into table with class 'case' for fields with 'input', 'radio', AND 'checked'
     //Retrieve from the chosen house the attributes and create a 010101 array to store
-    //in database. 
+    //in database.
     $("table.case input:radio:checked").each(function () {
       checked = 1;
       house = this.value;
@@ -132,12 +133,13 @@ var Dilemma1Controller = function ( model, view ){
 
     });
 
+    //If participants did not make a choice, let them know:
     if (checked!=1) {
      alert("Geef alstublieft een voorkeur op!");
      return;
     }
 
-    //Notify the observer that the dilemma is done
+    //When done, notify the observer that the dilemma is done
     model.dilemma1Done();
     //model.setDilemma1();
   });
