@@ -4,7 +4,7 @@
 
 	$database = new medoo();
 
-  $data = $database->update("users",array(
+  $data = $database->update("users",array( // Update the created userId row in table "users"
 
       "userId"			  => $_POST['userId'],
       "gender" 		    => $_POST['gender'],
@@ -14,7 +14,7 @@
 			"remarks" 		  => $_POST['remarks']
 
 	), [
-		"userId" => userId
+		"userId" => $_POST['userId']	//...where the userId = the userId
 	]);
 
 ?>
