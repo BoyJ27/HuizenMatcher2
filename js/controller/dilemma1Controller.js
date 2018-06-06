@@ -18,6 +18,103 @@ var Dilemma1Controller = function ( model, view ){
     var houseB5 = view.houseB5;
     var houseB6 = view.houseB6;
 
+    //Create arrays to carry the 0101 for each house
+    var attributesHouseA = [];
+    var attributesHouseB = [];
+    var attributesNoPreference = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    //Filling in the arrays
+    //Getting the house type
+    if (houseA2 == "Rijtjeshuis"){
+      attributesHouseA.push(1,0,0);
+    } else if (houseA2 == "Appartement"){
+      attributesHouseA.push(0,1,0);
+    } else if (houseA3 == "Vrijstaand"){
+      attributesHouseA.push(0,0,1);
+    }
+
+    //Getting the surface
+    if (houseA3 == 78){
+      attributesHouseA.push(1,0,0);
+    } else if (houseA3 == 114){
+      attributesHouseA.push(0,1,0);
+    } else if (houseA3 == 156){
+      attributesHouseA.push(0,0,1);
+    }
+
+    //Getting the number of bedrooms
+    if (houseA4 == 2){
+      attributesHouseA.push(1,0,0);
+    } else if (houseA4 == 3){
+      attributesHouseA.push(0,1,0);
+    } else if (houseA4 == 4){
+      attributesHouseA.push(0,0,1);
+    }
+
+    //Getting the surroundings
+    if (houseA5 == "Dorp"){
+      attributesHouseA.push(1,0,0);
+    } else if (houseA5 == "Buitenwijk"){
+      attributesHouseA.push(0,1,0);
+    } else if (houseA5 == "Stedelijk"){
+      attributesHouseA.push(0,0,1);
+    }
+
+    //Getting the distance to school
+    if (houseA6 == 370){
+      attributesHouseA.push(1,0,0);
+    } else if (houseA6 == 600){
+      attributesHouseA.push(0,1,0);
+    } else if (houseA6 == 1000){
+      attributesHouseA.push(0,0,1);
+    }
+
+    //Getting the house type
+    if (houseB2 == "Rijtjeshuis"){
+      attributesHouseB.push(1,0,0);
+    } else if (houseB2 == "Appartement"){
+      attributesHouseB.push(0,1,0);
+    } else if (houseB3 == "Vrijstaand"){
+      attributesHouseB.push(0,0,1);
+    }
+
+    //Getting the surface
+    if (houseB3 == 78){
+      attributesHouseB.push(1,0,0);
+    } else if (houseB3 == 114){
+      attributesHouseB.push(0,1,0);
+    } else if (houseB3 == 156){
+      attributesHouseB.push(0,0,1);
+    }
+
+    //Getting the number of bedrooms
+    if (houseB4 == 2){
+      attributesHouseB.push(1,0,0);
+    } else if (houseB4 == 3){
+      attributesHouseB.push(0,1,0);
+    } else if (houseB4 == 4){
+      attributesHouseB.push(0,0,1);
+    }
+
+    //Getting the surroundings
+    if (houseB5 == "Dorp"){
+      attributesHouseB.push(1,0,0);
+    } else if (houseB5 == "Buitenwijk"){
+      attributesHouseB.push(0,1,0);
+    } else if (houseB5 == "Stedelijk"){
+      attributesHouseB.push(0,0,1);
+    }
+
+    //Getting the distance to school
+    if (houseB6 == 370){
+      attributesHouseB.push(1,0,0);
+    } else if (houseB6 == 600){
+      attributesHouseB.push(0,1,0);
+    } else if (houseB6 == 1000){
+      attributesHouseB.push(0,0,1);
+    }
+
+
     //Look into table with class 'case' for fields with 'input', 'radio', AND 'checked'
     //Retrieve from the chosen house the attributes and create a 010101 array to store
     //in database.
@@ -27,111 +124,24 @@ var Dilemma1Controller = function ( model, view ){
 
       //Create an empty array in which to store the 01010 values
       //order: [rijtjeshuis, appartement, vrijstaand, 78, 114, 156, 2, 3, 4, dorp, buitenwijk, stedelijk, 370, 600, 1000]
-      var houseMatrix = [];
+      var choiceMatrix = [];
 
       //If house A is chosen
       if (house == "house A") {
         console.log("I chose house A");
-
-        //Getting the house type
-        if (houseA2 == "Rijtjeshuis"){
-          houseMatrix.push(1,0,0);
-        } else if (houseA2 == "Appartement"){
-          houseMatrix.push(0,1,0);
-        } else if (houseA3 == "Vrijstaand"){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the surface
-        if (houseA3 == 78){
-          houseMatrix.push(1,0,0);
-        } else if (houseA3 == 114){
-          houseMatrix.push(0,1,0);
-        } else if (houseA3 == 156){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the number of bedrooms
-        if (houseA4 == 2){
-          houseMatrix.push(1,0,0);
-        } else if (houseA4 == 3){
-          houseMatrix.push(0,1,0);
-        } else if (houseA4 == 4){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the surroundings
-        if (houseA5 == "Dorp"){
-          houseMatrix.push(1,0,0);
-        } else if (houseA5 == "Buitenwijk"){
-          houseMatrix.push(0,1,0);
-        } else if (houseA5 == "Stedelijk"){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the distance to school
-        if (houseA6 == 370){
-          houseMatrix.push(1,0,0);
-        } else if (houseA6 == 600){
-          houseMatrix.push(0,1,0);
-        } else if (houseA6 == 1000){
-          houseMatrix.push(0,0,1);
-        }
+        choiceMatrix = attributesHouseA;
       }
-
       //If house B is chosen
       else if (house == "house B") {
         console.log("I chose House B");
-
-        //Getting the house type
-        if (houseB2 == "Rijtjeshuis"){
-          houseMatrix.push(1,0,0);
-        } else if (houseB2 == "Appartement"){
-          houseMatrix.push(0,1,0);
-        } else if (houseB3 == "Vrijstaand"){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the surface
-        if (houseB3 == 78){
-          houseMatrix.push(1,0,0);
-        } else if (houseB3 == 114){
-          houseMatrix.push(0,1,0);
-        } else if (houseB3 == 156){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the number of bedrooms
-        if (houseB4 == 2){
-          houseMatrix.push(1,0,0);
-        } else if (houseB4 == 3){
-          houseMatrix.push(0,1,0);
-        } else if (houseB4 == 4){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the surroundings
-        if (houseB5 == "Dorp"){
-          houseMatrix.push(1,0,0);
-        } else if (houseB5 == "Buitenwijk"){
-          houseMatrix.push(0,1,0);
-        } else if (houseB5 == "Stedelijk"){
-          houseMatrix.push(0,0,1);
-        }
-
-        //Getting the distance to school
-        if (houseB6 == 370){
-          houseMatrix.push(1,0,0);
-        } else if (houseB6 == 600){
-          houseMatrix.push(0,1,0);
-        } else if (houseB6 == 1000){
-          houseMatrix.push(0,0,1);
-        }
-      } else {
-        console.log("I had no preference");
-        houseMatrix.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); //empty, no preference
+        choiceMatrix = attributesHouseB;
       }
-      console.log(houseMatrix);
+      //If no preference
+      else {
+        console.log("I had no preference");
+        choiceMatrix =attributesNoPreference;
+      }
+      console.log(choiceMatrix);
     });
 
     //If participants did not make a choice, let them know:
