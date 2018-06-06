@@ -4,10 +4,10 @@ var EvaluationView = function (model, container){
   var p1 						= $("<p>Geef voor elk van onderstaande aspecten aan hoe belangrijk ze voor u zijn in de keuze voor een huis.</p>");
 
 	var TableCont				= $("<div style='margin-top: 20px; margin-bottom: 20px; background-color: white; border-style: solid; border-color: lightgrey; border-width: 1px;'></div>");
-	var Table 					= $("<table id='answertable' style='width: 100%'></table>");
+	var Table 					= $("<table class='evaluationTable' style='width: 100%'></table>");
 
 	var Table2Cont				= $("<div style='margin-top: 20px; margin-bottom: 20px; background-color: white; border-style: solid; border-color: lightgrey; border-width: 1px;'></div>");
-	var Table2 					= $("<table id='answertable' style='width: 100%'></table>");
+	var Table2 					= $("<table class='importanceTable' style='width: 100%'></table>");
 
 	var volgendeButtonCont		= $("<center></center>");
 	var volgendeButton	 		= $( "<a class='btn button btn-default pull-right' id='extramargin' role='button'>Volgende &raquo;</a>" );

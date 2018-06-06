@@ -294,6 +294,30 @@ var HousingModel = function( options ){
 
   }
 
+  setEvaluation = function(priceval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval, otherval) {
+    var price = priceval;
+    var type = typeval;
+    var surface = surfaceval;
+    var bedrooms = bedroomsval;
+    var surroundings = surroundingsval;
+    var distance = distanceval;
+    var other = otherval;
+
+    $.post("ajax/insertEvaluation.php",
+      {
+          userId: currentUserId,
+          price: price,
+          type: type,
+          surface: surface,
+          bedrooms: bedrooms,
+          surroundings: surroundings,
+          distance: distance,
+          other: other
+      }).done(function(){
+        console.log("The evaluations are saved in the DB");
+      });
+  }
+
   setdilemma = function () {
     $.post("ajax/insertIntro.php",
       {
@@ -479,6 +503,7 @@ var HousingModel = function( options ){
   this.setAgqQuestions            = setAgqQuestions;
   this.setDemoQuestions            = setDemoQuestions;
   this.setPreferences             = setPreferences;
+  this.setEvaluation              = setEvaluation;
   this.setCity                    = setCity;
   this.setdilemma                 = setdilemma;
   this.setGame                    = setGame;

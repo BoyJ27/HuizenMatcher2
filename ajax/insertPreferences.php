@@ -6,7 +6,6 @@
 
   $data = $database->update("users",array( // Update the created userId row in table "users"
 
-      "userId"                => $_POST['userId'],
       "municipality"          => $_POST['city'],
       "maxBudget"             => $_POST['budget'],
       "selectedType"          => $_POST['type'],

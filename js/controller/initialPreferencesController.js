@@ -9,12 +9,15 @@ var InitialPreferencesController = function( model, view ){
 		var surroundings = $("#surroundings").val();
 		var distance = $("#distance").val();
 
-		if(city != 0 && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0) {
-			model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
-			model.initialPreferencesDone();
-		} else {
-			alert( 'U bent waarschijnlijk een vraag vergeten!' );
-		}
+		model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
+		model.initialPreferencesDone();
+
+		// if(city != 0 && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0) {
+		// 	model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
+		// 	model.initialPreferencesDone();
+		// } else {
+		// 	alert( 'U bent waarschijnlijk een vraag vergeten!' );
+		// }
 	});
 
 }
