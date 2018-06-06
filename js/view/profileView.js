@@ -1,9 +1,9 @@
 var ProfileView = function (model, container){
 
-  var introduction = $("<p>Vul alsjeblieft ook de volgende vragen over jezelf in. We slaan alle informatie anoniem en confidentieel op. Het kan niet terug getraceerd worden naar jou als persoon. We gebruiken de informatie alleen voor onderzoeksdoeleinden.</p>")
+  var introduction = $("<p>Vul alsjeblieft ook de volgende vragen over juzelf in. We slaan alle informatie anoniem en confidentieel op. Het kan niet terug getraceerd worden naar u als persoon. We gebruiken de informatie alleen voor onderzoeksdoeleinden.</p>")
   var form				= $( "<form role='form'>" );
 
-  var geslachttext     = $('<div style="font-size: 15px; font-weight:bold;  width: 100%"><p class="marginbottom">Geef alsjeblieft je geslacht aan.*</p> ');
+  var geslachttext     = $('<div style="font-size: 15px; font-weight:bold;  width: 100%"><p class="marginbottom">Geef alsjeblieft uw geslacht aan.*</p> ');
   var geslachtinput 			= $ ("<div style='font-weight:bold; font-size: 15px; margin-bottom: 15px; width: 100%'><select name='gender' id='gender' style='width:250px'><option value='0'>---------------</option><option value='1'>Vrouw</option><option value='2'>Man</option><option value='3'>Anders</option>");
 
   var leeftijdinput			= $( '<div style="font-weight:bold; font-size: 15px; margin-bottom: 15px; width: 100%" class="input-group"><input style="font-weight: normal; width: 250px" type="text" pattern="\d*" id="leeftijd" placeholder="Vul uw leeftijd in.*">');
