@@ -32,6 +32,10 @@ th.centercell {
 	width: 30%;
 }
 
+#lighter {
+	background-color: #fafafa;
+}
+
 
 th {
 	padding-top:5px;
@@ -445,4 +449,8 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 .droppedtext p {
 	margin-bottom: 0px;
+}
+
+.twentyfive {
+	width: 25%;
 }
