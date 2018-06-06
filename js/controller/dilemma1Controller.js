@@ -22,10 +22,12 @@ var Dilemma1Controller = function ( model, view ){
     //Retrieve from the chosen house the attributes and create a 010101 array to store
     //in database.
     $("table.case input:radio:checked").each(function () {
-      checked = 1;
-      house = this.value;
-      var houseMatrix = []; // [rijtjeshuis, appartement, vrijstaand, 78, 114, 156, 2, 3, 4, dorp, buitenwijk, stedelijk, 370, 600, 1000]
-      console.log(house); // A console log with the value.
+      checked = 1; // user made a choice
+      house = this.value; //get the chosen house (house A, house B or no preference)
+
+      //Create an empty array in which to store the 01010 values
+      //order: [rijtjeshuis, appartement, vrijstaand, 78, 114, 156, 2, 3, 4, dorp, buitenwijk, stedelijk, 370, 600, 1000]
+      var houseMatrix = [];
 
       //If house A is chosen
       if (house == "house A") {
@@ -130,7 +132,6 @@ var Dilemma1Controller = function ( model, view ){
         houseMatrix.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0); //empty, no preference
       }
       console.log(houseMatrix);
-
     });
 
     //If participants did not make a choice, let them know:
