@@ -153,20 +153,8 @@ var HousingModel = function( options ){
 
   createUser = function(){
     console.log("Creating user");
-
-    var path = window.location.href;
-    var arr = path.split('/');
-    var tidstring = arr[arr.length-1];
-    var tid = tidstring.replace( /^\D+/g, '');
-    console.log("tid is: " + tid);
-
-
-    $.post( "ajax/insertUser.php",
-      {
-        tid: tid
-      }).done( function( data ) {
+    $.post( "ajax/insertUser.php").done( function( data ) {
         currentUserId = data;
-        window.location = "#" + currentUserId;
         console.log(currentUserId);
       });
   }
@@ -190,7 +178,26 @@ var HousingModel = function( options ){
       });
   }
 
+  setDemoQuestions = function(ageval, genderval, educationval, familyval, remarksval) {
+    var age = ageval;
+    var gender = genderval;
+    var education = educationval;
+    var family = familyval;
+    var remarks = remarksval;
 
+    $.post("ajax/insertDemo.php",
+      {
+        userId: currentUserId,
+        age: age,
+        gender: gender,
+        education: education,
+        family: family,
+        remarks: remarks,
+      }).done(function(){
+        console.log("The question + answer are saved in the DB");
+      });
+
+  }
 
   setAgqQuestions = function(answers) {
     var q1 = answers[0];
@@ -445,6 +452,7 @@ var HousingModel = function( options ){
   this.shuffleHouses              = shuffleHouses;
 
   this.setAgqQuestions            = setAgqQuestions;
+  this.setDemoQuestions            = setDemoQuestions;
   this.setCity                    = setCity;
   this.setdilemma                 = setdilemma;
   this.setGame                    = setGame;

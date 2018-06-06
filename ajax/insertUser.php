@@ -4,11 +4,10 @@
 
 	$database = new medoo();
 
-	$max = $database->max("users",'id');
+	$max = $database->max("users",'userId');
 
 	$database->insert("users",[
-			"id"			=> $max+1,
-			"tid"			=> $_POST['tid'],
+			"userId"			=> $max+1,
 	]);
 
 	echo $max+1;
