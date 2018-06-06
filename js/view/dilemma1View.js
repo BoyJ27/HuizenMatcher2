@@ -21,12 +21,12 @@ var Dilemma1View = function (model, container) {
     if ( args == "instructionsDone"){ // When the instructions have been read:
 
       // Load the house attributes for this dilemma:
-      var houseA1 = model.getHouses(0, 0, 0);
-      var houseA2 = model.getHouses(0, 0, 1);
-      var houseA3 = model.getHouses(0, 0, 2);
-      var houseA4 = model.getHouses(0, 0, 3);
-      var houseA5 = model.getHouses(0, 0, 4);
-      var houseA6 = model.getHouses(0, 0, 5);
+      var houseA1 = model.getHouses(0, 0, 0); // price
+      var houseA2 = model.getHouses(0, 0, 1); // type
+      var houseA3 = model.getHouses(0, 0, 2); // Woonoppervlakte
+      var houseA4 = model.getHouses(0, 0, 3); // aantal Slaapkamers
+      var houseA5 = model.getHouses(0, 0, 4); // omgeving
+      var houseA6 = model.getHouses(0, 0, 5); // afstand tot school
 
       var houseB1 = model.getHouses(0, 1, 0);
       var houseB2 = model.getHouses(0, 1, 1);
@@ -34,6 +34,19 @@ var Dilemma1View = function (model, container) {
       var houseB4 = model.getHouses(0, 1, 3);
       var houseB5 = model.getHouses(0, 1, 4);
       var houseB6 = model.getHouses(0, 1, 5);
+
+      //Public
+      this.houseA2 = houseA2;
+      this.houseA3 = houseA3;
+      this.houseA4 = houseA4;
+      this.houseA5 = houseA5;
+      this.houseA6 = houseA6;
+
+      this.houseB2 = houseB2;
+      this.houseB3 = houseB3;
+      this.houseB4 = houseB4;
+      this.houseB5 = houseB5;
+      this.houseB6 = houseB6;
 
       //Creating the table with house attributes
       var table = $( "<table class='case'></table>"); // The whole table
@@ -55,6 +68,8 @@ var Dilemma1View = function (model, container) {
       //The container is visible, the elements within it might be hidden
       container.show();
       }
+
+
 
     if ( args == "dilemma1Done" ){
       container.hide();
