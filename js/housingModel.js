@@ -379,7 +379,7 @@ var HousingModel = function( options ){
           distance600B: houseMatrixB[14],
           distance1000B: houseMatrixB[15]
         }).done(function(){
-          console.log("Dilemma choice = house A has been inserted into the database.");
+          console.log("Dilemma "+choice+" choice = house A has been inserted into the database.");
         });
 
     } else if (choice == 2) { //House B
@@ -420,7 +420,7 @@ var HousingModel = function( options ){
           distance600B: houseMatrixB[14],
           distance1000B: houseMatrixB[15]
         }).done(function(){
-          console.log("Dilemma choice = house B has been inserted into the database.");
+          console.log("Dilemma "+choice+" choice = house B has been inserted into the database.");
         });
 
     } else if (choice == 3) { // No preference
@@ -461,7 +461,7 @@ var HousingModel = function( options ){
           distance600B: houseMatrixB[14],
           distance1000B: houseMatrixB[15]
         }).done(function(){
-          console.log("Dilemma choice = no preference has been inserted into the database.");
+          console.log("Dilemma "+choice+" choice= no preference has been inserted into the database.");
         });
     }
 
