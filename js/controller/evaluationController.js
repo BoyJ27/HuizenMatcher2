@@ -3,7 +3,6 @@ var EvaluationController = function(model, view) {
 	view.volgendeButton.click(function(){
 
 		evaluationQuestions = []; //Array to store answers
-
 		//Getting all the checked radio buttons in the first table...
 		$("table.evaluationTable input:radio:checked").each(function (index, value) {
 			evaluationQuestions[index] = value.value; //..And storing the value of this radio button in the array
@@ -17,7 +16,6 @@ var EvaluationController = function(model, view) {
 		var evaluation5 = evaluationQuestions[4];
 
 		importanceQuestions = []; //Array to store importance questions
-
 		//Getting all the checked radio buttons in the second table...
 		$("table.importanceTable input:radio:checked").each(function (index, value) {
 			importanceQuestions[index] = value.value; //..And storing the value of this radio button in the array
@@ -50,6 +48,7 @@ var EvaluationController = function(model, view) {
 			});
 */
 			model.setEvaluation(price, type, surface, bedrooms, surroundings, distance, other);
+			model.setLikert(evaluation1, evaluation2, evaluation3, evaluation4, evaluation5);
 			model.evaluationDone();
 		});
  }

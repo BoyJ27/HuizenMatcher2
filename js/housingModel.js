@@ -121,6 +121,16 @@ var HousingModel = function( options ){
     // console.log(municipalities[0]);
   });
 
+checkCity = function(cityvar){
+var city = cityvar;
+var count = municipalities.length;
+  for (var i=0;i<count;i++)
+  {
+      if(municipalities[i]===city){return true;}
+  }
+  return false;
+  }
+
   /***********************************************************
             Helper Functions
   ***********************************************************/
@@ -166,23 +176,6 @@ var HousingModel = function( options ){
         console.log(currentUserId);
       });
   }
-
-  checkCity = function(cityval){
-    var city = cityval;
-    $(function(){
-    $.ajax({
-      type: "POST",
-      url: 'ajax/checkCity.php',
-      data: city,
-    });
-    });
-
-    //  $.get( "ajax/checkCity.php", function( data ){
-    //  var available = $check;
-    //  return available;
-    //  });
-}
-
 
   setDemoQuestions = function(ageval, genderval, educationval, familyval, remarksval) {
     var age = ageval;
@@ -269,6 +262,27 @@ var HousingModel = function( options ){
           surroundings: surroundings,
           distance: distance,
           other: other
+      }).done(function(){
+        console.log("The evaluations are saved in the DB");
+      });
+  }
+
+  setLikert = function(eval1, eval2, eval3, eval4, eval5) {
+    var evaluation1 = eval1;
+    var evaluation2 = eval2;
+    var evaluation3 = eval3;
+    var evaluation4 = eval4;
+    var evaluation5 = eval5;
+
+    $.post("ajax/insertLikert.php",
+      {
+          userId: currentUserId,
+          evaluation1:evaluation1,
+          evaluation2:evaluation2,
+          evaluation3:evaluation3,
+          evaluation4:evaluation4,
+          evaluation5:evaluation5,
+
       }).done(function(){
         console.log("The evaluations are saved in the DB");
       });
@@ -611,6 +625,7 @@ var HousingModel = function( options ){
   this.setDemoQuestions           = setDemoQuestions;
   this.setPreferences             = setPreferences;
   this.setEvaluation              = setEvaluation;
+  this.setLikert             = setLikert;
   this.setCity                    = setCity;
   // this.setDilemma                 = setDilemma;\
   this.setDilemmaA                = setDilemmaA;
@@ -618,7 +633,7 @@ var HousingModel = function( options ){
   this.setDilemmaNo               = setDilemmaNo;
 
   this.getMunicipalities       = function(){return municipalities} ;
-
+  this.municipalities = municipalities;
   this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;
 

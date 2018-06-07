@@ -38,7 +38,7 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
       var houseC6 = model.getHouses(7, 1, 5);
 
       //Creating the table with house attributes
-      var table = $( "<table class='case'></table>"); // The whole table
+      var table = $( "<table class='case2'></table>"); // The whole table
       var headers = $( "<tr><th class='twentyfive'>Attributen</th><th class='twentyfive'>Huis A</th><th class='twentyfive'>Huis B</th><th class='twentyfive'>Huis C</th></tr>" ); //The headers
       var priceRow = $("<tr><td>Prijs</td><td id='lighter'>&euro;"+houseA1+"</td><td id='lighter'>&euro;"+houseB1+"</td><td id='lighter'>&euro;"+houseC1+"</td></tr>"); // The attribute price
       var typeRow = $("<tr><td>Woningtype</td><td id='lighter'>"+houseA2+"</td><td id='lighter'>"+houseB2+"</td><td id='lighter'>"+houseC2+"</td></tr>");
@@ -46,7 +46,7 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
       var bedroomRow = $("<tr><td>Aantal slaapkamers</td><td id='lighter'>"+houseA4+"</td><td id='lighter'>"+houseB4+"</td><td id='lighter'>"+houseC4+"</td></tr>");
       var surroundingsRow = $("<tr><td>Bebouwde omgeving</td><td id='lighter'>"+houseA5+"</td><td id='lighter'>"+houseB5+"</td><td id='lighter'>"+houseC5+"</td></tr>");
       var distanceRow = $("<tr><td>Afstand tot basisschooltext</td><td id='lighter'>"+houseA6+" m</td><td id='lighter'>"+houseB6+" m</td><td id='lighter'>"+houseC6+" m</td></tr>");
-      var lastRow = $("<tr><td>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' name='evalA' value='evalA'></td><td class='twentyfive' id='lighter'><input type='number' name='evalB' value='evalB'></td><td class='twentyfive' id='lighter'><input type='number' name='evalC' value='evalC'></td></tr>");
+      var lastRow = $("<tr><td>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' name='evalA' id='evalA'></td><td class='twentyfive' id='lighter'><input type='number' name='evalB' id='evalB'></td><td class='twentyfive' id='lighter'><input type='number' name='evalC' id='evalC'></td></tr>");
 
       //Putting the rows into the Table
       table.append(headers, priceRow, typeRow, surfaceRow, bedroomRow, surroundingsRow, distanceRow, lastRow);
