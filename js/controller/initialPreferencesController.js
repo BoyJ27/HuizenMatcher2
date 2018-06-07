@@ -11,12 +11,12 @@ var InitialPreferencesController = function( model, view ){
 
 		var check = model.checkCity(city);
 		console.log(check);
-		//if (check == 1){
+	 if (check == 1){
 			model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
 			model.initialPreferencesDone();
 	//	} else {
 			//alert("Wij hebben helaas geen data voor de door u opgegeven gemeente.");
-	//	}
+ 		}
 
 
 

@@ -159,13 +159,20 @@ var HousingModel = function( options ){
 
   checkCity = function(cityval){
     var city = cityval;
-    $(function(){
+
     $.ajax({
       type: "POST",
+      dataType: "json",
       url: 'ajax/checkCity.php',
-      data: city,
+      data: {city:cityval},
+      success: function(msg){
+        console.log(msg);
+        if(msg){
+
+        }
+      }
     });
-    });
+
 
     //  $.get( "ajax/checkCity.php", function( data ){
     //  var available = $check;
