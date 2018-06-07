@@ -19,26 +19,23 @@ var Dilemma4Controller = function ( model, view ){
 
       //If house A is chosen
       if (house == "house A") {
-        console.log("I chose house A");
-        setDilemma(1, 1, attributesHouseA, attributesHouseB); //Dilemma = 1, choice = 1 (house A), array for A, array for B
+        setDilemmaA(4, attributesHouseA, attributesHouseB); //Dilemma = 1, choice = 1 (house A), array for A, array for B
       }
       //If house B is chosen
       else if (house == "house B") {
-        console.log("I chose House B");
-        setDilemma(1, 2, attributesHouseA, attributesHouseB);
+        setDilemmaB(4, attributesHouseA, attributesHouseB);
       }
       //If no preference
       else {
-        console.log("I had no preference");
-        setDilemma(1, 3, attributesHouseA, attributesHouseB);
+        setDilemmaNo(4, attributesHouseA, attributesHouseB);
       }
     });
 
     //If participants did not make a choice, let them know:
-    if (checked!=1) {
-     alert("Geef alstublieft een voorkeur op!");
-     return;
-    }
+    // if (checked!=1) {
+    //  alert("Geef alstublieft een voorkeur op!");
+    //  return;
+    // }
 
         model.dilemma4Done();
   });
