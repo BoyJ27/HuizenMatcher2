@@ -178,6 +178,23 @@ var HousingModel = function( options ){
       });
   }
 
+  checkCity = function(cityval){
+    var city = cityval;
+    $(function(){
+    $.ajax({
+      type: "POST",
+      url: 'ajax/checkCity.php',
+      data: ({citycheck:city}),
+    });
+    });
+
+    //  $.get( "ajax/checkCity.php", function( data ){
+    //  var available = $check;
+    //  return available;
+    //  });
+}
+
+
   setDemoQuestions = function(ageval, genderval, educationval, familyval, remarksval) {
     var age = ageval;
     var gender = genderval;
@@ -510,7 +527,7 @@ var HousingModel = function( options ){
   this.setPlaythrough             = setPlaythrough;
   this.setFinalStop               = setFinalStop;
   this.gamecount                  = gamecount;
-
+  this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;
 
   this.setConsent           = setConsent;

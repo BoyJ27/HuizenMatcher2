@@ -9,8 +9,15 @@ var InitialPreferencesController = function( model, view ){
 		var surroundings = $("#surroundings").val();
 		var distance = $("#distance").val();
 
-		model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
-		model.initialPreferencesDone();
+		if (model.checkCity(city) == 1){
+			model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
+			model.initialPreferencesDone();
+		} else {
+			//alert("Wij hebben helaas geen data voor de door u opgegeven gemeente.");
+		}
+
+
+
 
 		// if(city != 0 && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0) {
 		// 	model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
