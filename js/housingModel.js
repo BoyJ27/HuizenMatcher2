@@ -111,6 +111,14 @@ var HousingModel = function( options ){
     dilemma20
   ];
 
+  var municipalities = [];
+  $.get("ajax/retrieveMunicipalities.php", function(data) {
+    municipalities = data;
+  }).done(function() {
+    console.log(municipalities);
+    console.log(municipalities[0]);
+  });
+
   /***********************************************************
             Helper Functions
   ***********************************************************/
@@ -188,7 +196,7 @@ var HousingModel = function( options ){
         gender: gender,
         education: education,
         family: family,
-        remarks: remarks,
+        remarks: remarks
       }).done(function(){
         console.log("The question + answer are saved in the DB");
       });
@@ -588,6 +596,7 @@ var HousingModel = function( options ){
   ***********************************************************/
 // dit is nodig om ze vanuit een andere js te kunnen aanroepen
   this.o                    = o;
+  this.municipalities       = municipalities;
 
   this.createUser                 = createUser;
   this.getHouses = function(a,b,c) {
@@ -596,7 +605,6 @@ var HousingModel = function( options ){
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
-
 
   this.setDemoQuestions           = setDemoQuestions;
   this.setPreferences             = setPreferences;
