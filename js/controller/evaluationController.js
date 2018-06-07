@@ -30,7 +30,7 @@ var EvaluationController = function(model, view) {
 		var surroundings = importanceQuestions[4];
 		var distance = importanceQuestions[5];
 
-		var other = $("#budget").val();
+		var other = $("#other").val();
 
 		console.log("the price is: "+price+", the type is: "+type+", the surface is: "+surface+", the bedrooms is: "+bedrooms+", the surroundings is: "+surroundings+", the distance is: "+distance+", other is: "+other);
 	 /*if( $( '#answertable input:checked' ).length < 20 ){

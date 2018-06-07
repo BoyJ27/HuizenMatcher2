@@ -31,7 +31,7 @@ var EvaluationView = function (model, container){
 	];
 
 	var othervartext 			= $('<br><div style="font-size: 16px; width: 100%"><p class="marginbottom">Aan welke andere aspecten van een huis - anders dan de hierboven genoemde items - hecht u veel waarde? (Optioneel)</p> ');
-	var othervarinput   	= $( '<div style="font-weight:bold; font-size: 16px; margin-bottom: 15px; width: 100%" class="input-group"><input style="font-weight: normal; width: 400px" type="text" pattern="\d*" id="budget" placeholder="Andere aspecten...">');
+	var othervarinput   	= $( '<div style="font-weight:bold; font-size: 16px; margin-bottom: 15px; width: 100%" class="input-group"><input style="font-weight: normal; width: 400px" type="text" pattern="\d*" id="other" placeholder="Andere aspecten...">');
 
 	$.each(questions1, function(index, value) {
 		if(index == 0) {

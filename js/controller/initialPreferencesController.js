@@ -1,7 +1,7 @@
 var InitialPreferencesController = function( model, view ){
 
 	view.volgendeButton.click(function(){
-		var city = $("#stad").val();
+		var city = $("#city").val();
 		var budget = $("#budget").val();
 		var type = $("#type").val();
 		var surface = $("#surface").val();
