@@ -35,18 +35,16 @@ var Dilemma1View = function (model, container) {
       var houseB5 = model.getHouses(0, 1, 4);
       var houseB6 = model.getHouses(0, 1, 5);
 
-      //Public
-      this.houseA2 = houseA2;
-      this.houseA3 = houseA3;
-      this.houseA4 = houseA4;
-      this.houseA5 = houseA5;
-      this.houseA6 = houseA6;
+      //Create arrays to carry the 0101 for each house
+      var attributesHouseA = [];
+      var attributesHouseB = [];
 
-      this.houseB2 = houseB2;
-      this.houseB3 = houseB3;
-      this.houseB4 = houseB4;
-      this.houseB5 = houseB5;
-      this.houseB6 = houseB6;
+      attributesHouseA = model.createMatrix(houseA1, houseA2, houseA3, houseA4, houseA5, houseA6);
+      attributesHouseB = model.createMatrix(houseB1, houseB2, houseB3, houseB4, houseB5, houseB6);
+
+      //Public
+      this.attributesHouseA = attributesHouseA;
+      this.attributesHouseB = attributesHouseB;
 
       //Creating the table with house attributes
       var table = $( "<table class='case'></table>"); // The whole table
