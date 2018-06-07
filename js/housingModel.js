@@ -264,136 +264,142 @@ var HousingModel = function( options ){
       });
   }
 
-  setDilemma = function (dilemmaval, choiceval, arrayA, arrayB) {
+  setDilemmaA = function (dilemmaval, arrayA, arrayB) {
     var dilemma = dilemmaval;
-    var choice = choiceval;
     var houseMatrixA = arrayA;
     var houseMatrixB = arrayB;
 
-    if (choice == 1) { //house A
-      $.post("ajax/insertDilemmaA.php",
-        {
-          userId: currentUserId,
-          dilemma: dilemma,
-          priceA: houseMatrixA[0],
-          rijtjeshuisA: houseMatrixA[1],
-          appartementA: houseMatrixA[2],
-          vrijstaandA: houseMatrixA[3],
-          surface78A: houseMatrixA[4],
-          surface114A: houseMatrixA[5],
-          surface156A: houseMatrixA[6],
-          bedrooms2A: houseMatrixA[7],
-          bedrooms3A: houseMatrixA[8],
-          bedrooms4A: houseMatrixA[9],
-          dorpA: houseMatrixA[10],
-          buitenwijkA: houseMatrixA[11],
-          stedelijkA: houseMatrixA[12],
-          distance370A: houseMatrixA[13],
-          distance600A: houseMatrixA[14],
-          distance1000A: houseMatrixA[15],
-          priceB: houseMatrixB[0],
-          rijtjeshuisB: houseMatrixB[1],
-          appartementB: houseMatrixB[2],
-          vrijstaandB: houseMatrixB[3],
-          surface78B: houseMatrixB[4],
-          surface114B: houseMatrixB[5],
-          surface156B: houseMatrixB[6],
-          bedrooms2B: houseMatrixB[7],
-          bedrooms3B: houseMatrixB[8],
-          bedrooms4B: houseMatrixB[9],
-          dorpB: houseMatrixB[10],
-          buitenwijkB: houseMatrixB[11],
-          stedelijkB: houseMatrixB[12],
-          distance370B: houseMatrixB[13],
-          distance600B: houseMatrixB[14],
-          distance1000B: houseMatrixB[15]
-        }).done(function(){
-          console.log("Dilemma "+choice+" choice = house A has been inserted into the database.");
-        });
+    $.post("ajax/insertDilemmaA.php",
+      {
+        userId: currentUserId,
+        dilemma: dilemma,
+        priceA: houseMatrixA[0],
+        rijtjeshuisA: houseMatrixA[1],
+        appartementA: houseMatrixA[2],
+        vrijstaandA: houseMatrixA[3],
+        surface78A: houseMatrixA[4],
+        surface114A: houseMatrixA[5],
+        surface156A: houseMatrixA[6],
+        bedrooms2A: houseMatrixA[7],
+        bedrooms3A: houseMatrixA[8],
+        bedrooms4A: houseMatrixA[9],
+        dorpA: houseMatrixA[10],
+        buitenwijkA: houseMatrixA[11],
+        stedelijkA: houseMatrixA[12],
+        distance370A: houseMatrixA[13],
+        distance600A: houseMatrixA[14],
+        distance1000A: houseMatrixA[15],
+        priceB: houseMatrixB[0],
+        rijtjeshuisB: houseMatrixB[1],
+        appartementB: houseMatrixB[2],
+        vrijstaandB: houseMatrixB[3],
+        surface78B: houseMatrixB[4],
+        surface114B: houseMatrixB[5],
+        surface156B: houseMatrixB[6],
+        bedrooms2B: houseMatrixB[7],
+        bedrooms3B: houseMatrixB[8],
+        bedrooms4B: houseMatrixB[9],
+        dorpB: houseMatrixB[10],
+        buitenwijkB: houseMatrixB[11],
+        stedelijkB: houseMatrixB[12],
+        distance370B: houseMatrixB[13],
+        distance600B: houseMatrixB[14],
+        distance1000B: houseMatrixB[15]
+      }).done(function(){
+        console.log("Dilemma "+dilemma+" choice = house A has been inserted into the database.");
+      });
+  }
 
-    } else if (choice == 2) { //House B
-      $.post("ajax/insertDilemmaB.php",
-        {
-          userId: currentUserId,
-          dilemma: dilemma,
-          priceA: houseMatrixA[0],
-          rijtjeshuisA: houseMatrixA[1],
-          appartementA: houseMatrixA[2],
-          vrijstaandA: houseMatrixA[3],
-          surface78A: houseMatrixA[4],
-          surface114A: houseMatrixA[5],
-          surface156A: houseMatrixA[6],
-          bedrooms2A: houseMatrixA[7],
-          bedrooms3A: houseMatrixA[8],
-          bedrooms4A: houseMatrixA[9],
-          dorpA: houseMatrixA[10],
-          buitenwijkA: houseMatrixA[11],
-          stedelijkA: houseMatrixA[12],
-          distance370A: houseMatrixA[13],
-          distance600A: houseMatrixA[14],
-          distance1000A: houseMatrixA[15],
-          priceB: houseMatrixB[0],
-          rijtjeshuisB: houseMatrixB[1],
-          appartementB: houseMatrixB[2],
-          vrijstaandB: houseMatrixB[3],
-          surface78B: houseMatrixB[4],
-          surface114B: houseMatrixB[5],
-          surface156B: houseMatrixB[6],
-          bedrooms2B: houseMatrixB[7],
-          bedrooms3B: houseMatrixB[8],
-          bedrooms4B: houseMatrixB[9],
-          dorpB: houseMatrixB[10],
-          buitenwijkB: houseMatrixB[11],
-          stedelijkB: houseMatrixB[12],
-          distance370B: houseMatrixB[13],
-          distance600B: houseMatrixB[14],
-          distance1000B: houseMatrixB[15]
-        }).done(function(){
-          console.log("Dilemma "+choice+" choice = house B has been inserted into the database.");
-        });
+  setDilemmaB = function (dilemmaval, arrayA, arrayB) {
+    var dilemma = dilemmaval;
+    var houseMatrixA = arrayA;
+    var houseMatrixB = arrayB;
 
-    } else if (choice == 3) { // No preference
-      $.post("ajax/insertDilemmaNo.php",
-        {
-          userId: currentUserId,
-          dilemma: dilemma,
-          priceA: houseMatrixA[0],
-          rijtjeshuisA: houseMatrixA[1],
-          appartementA: houseMatrixA[2],
-          vrijstaandA: houseMatrixA[3],
-          surface78A: houseMatrixA[4],
-          surface114A: houseMatrixA[5],
-          surface156A: houseMatrixA[6],
-          bedrooms2A: houseMatrixA[7],
-          bedrooms3A: houseMatrixA[8],
-          bedrooms4A: houseMatrixA[9],
-          dorpA: houseMatrixA[10],
-          buitenwijkA: houseMatrixA[11],
-          stedelijkA: houseMatrixA[12],
-          distance370A: houseMatrixA[13],
-          distance600A: houseMatrixA[14],
-          distance1000A: houseMatrixA[15],
-          priceB: houseMatrixB[0],
-          rijtjeshuisB: houseMatrixB[1],
-          appartementB: houseMatrixB[2],
-          vrijstaandB: houseMatrixB[3],
-          surface78B: houseMatrixB[4],
-          surface114B: houseMatrixB[5],
-          surface156B: houseMatrixB[6],
-          bedrooms2B: houseMatrixB[7],
-          bedrooms3B: houseMatrixB[8],
-          bedrooms4B: houseMatrixB[9],
-          dorpB: houseMatrixB[10],
-          buitenwijkB: houseMatrixB[11],
-          stedelijkB: houseMatrixB[12],
-          distance370B: houseMatrixB[13],
-          distance600B: houseMatrixB[14],
-          distance1000B: houseMatrixB[15]
-        }).done(function(){
-          console.log("Dilemma "+choice+" choice= no preference has been inserted into the database.");
-        });
-    }
+    $.post("ajax/insertDilemmaB.php",
+      {
+        userId: currentUserId,
+        dilemma: dilemma,
+        priceA: houseMatrixA[0],
+        rijtjeshuisA: houseMatrixA[1],
+        appartementA: houseMatrixA[2],
+        vrijstaandA: houseMatrixA[3],
+        surface78A: houseMatrixA[4],
+        surface114A: houseMatrixA[5],
+        surface156A: houseMatrixA[6],
+        bedrooms2A: houseMatrixA[7],
+        bedrooms3A: houseMatrixA[8],
+        bedrooms4A: houseMatrixA[9],
+        dorpA: houseMatrixA[10],
+        buitenwijkA: houseMatrixA[11],
+        stedelijkA: houseMatrixA[12],
+        distance370A: houseMatrixA[13],
+        distance600A: houseMatrixA[14],
+        distance1000A: houseMatrixA[15],
+        priceB: houseMatrixB[0],
+        rijtjeshuisB: houseMatrixB[1],
+        appartementB: houseMatrixB[2],
+        vrijstaandB: houseMatrixB[3],
+        surface78B: houseMatrixB[4],
+        surface114B: houseMatrixB[5],
+        surface156B: houseMatrixB[6],
+        bedrooms2B: houseMatrixB[7],
+        bedrooms3B: houseMatrixB[8],
+        bedrooms4B: houseMatrixB[9],
+        dorpB: houseMatrixB[10],
+        buitenwijkB: houseMatrixB[11],
+        stedelijkB: houseMatrixB[12],
+        distance370B: houseMatrixB[13],
+        distance600B: houseMatrixB[14],
+        distance1000B: houseMatrixB[15]
+      }).done(function(){
+        console.log("Dilemma "+dilemma+" choice = house B has been inserted into the database.");
+      });
+  }
 
+  setDilemmaNo = function (dilemmaval, arrayA, arrayB) {
+    var dilemma = dilemmaval;
+    var houseMatrixA = arrayA;
+    var houseMatrixB = arrayB;
+
+    $.post("ajax/insertDilemmaNo.php",
+      {
+        userId: currentUserId,
+        dilemma: dilemma,
+        priceA: houseMatrixA[0],
+        rijtjeshuisA: houseMatrixA[1],
+        appartementA: houseMatrixA[2],
+        vrijstaandA: houseMatrixA[3],
+        surface78A: houseMatrixA[4],
+        surface114A: houseMatrixA[5],
+        surface156A: houseMatrixA[6],
+        bedrooms2A: houseMatrixA[7],
+        bedrooms3A: houseMatrixA[8],
+        bedrooms4A: houseMatrixA[9],
+        dorpA: houseMatrixA[10],
+        buitenwijkA: houseMatrixA[11],
+        stedelijkA: houseMatrixA[12],
+        distance370A: houseMatrixA[13],
+        distance600A: houseMatrixA[14],
+        distance1000A: houseMatrixA[15],
+        priceB: houseMatrixB[0],
+        rijtjeshuisB: houseMatrixB[1],
+        appartementB: houseMatrixB[2],
+        vrijstaandB: houseMatrixB[3],
+        surface78B: houseMatrixB[4],
+        surface114B: houseMatrixB[5],
+        surface156B: houseMatrixB[6],
+        bedrooms2B: houseMatrixB[7],
+        bedrooms3B: houseMatrixB[8],
+        bedrooms4B: houseMatrixB[9],
+        dorpB: houseMatrixB[10],
+        buitenwijkB: houseMatrixB[11],
+        stedelijkB: houseMatrixB[12],
+        distance370B: houseMatrixB[13],
+        distance600B: houseMatrixB[14],
+        distance1000B: houseMatrixB[15]
+      }).done(function(){
+        console.log("Dilemma "+dilemma+" choice = no preference has been inserted into the database.");
+      });
   }
 
   setConsent = function (value){
@@ -431,7 +437,7 @@ var HousingModel = function( options ){
       houseMatrix.push(1,0,0);
     } else if (surface == 114){
       houseMatrix.push(0,1,0);
-    } else if (surface == 156){
+    } else if (surface == 165){
       houseMatrix.push(0,0,1);
     }
 
@@ -596,7 +602,11 @@ var HousingModel = function( options ){
   this.setPreferences             = setPreferences;
   this.setEvaluation              = setEvaluation;
   this.setCity                    = setCity;
-  this.setDilemma                 = setDilemma;
+  // this.setDilemma                 = setDilemma;\
+  this.setDilemmaA                = setDilemmaA;
+  this.setDilemmaB                = setDilemmaB;
+  this.setDilemmaNo               = setDilemmaNo;
+
   this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;
 

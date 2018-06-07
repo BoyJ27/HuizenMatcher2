@@ -19,15 +19,15 @@ var Dilemma7Controller = function ( model, view ){
 
       //If house A is chosen
       if (house == "house A") {
-        setDilemma(7, 1, attributesHouseA, attributesHouseB); //Dilemma = 1, choice = 1 (house A), array for A, array for B
+        setDilemmaA(7, attributesHouseA, attributesHouseB); //Dilemma = 1, choice = 1 (house A), array for A, array for B
       }
       //If house B is chosen
       else if (house == "house B") {
-        setDilemma(7, 2, attributesHouseA, attributesHouseB);
+        setDilemmaB(7, attributesHouseA, attributesHouseB);
       }
       //If no preference
       else {
-        setDilemma(7, 3, attributesHouseA, attributesHouseB);
+        setDilemmaNo(7, attributesHouseA, attributesHouseB);
       }
     });
 
