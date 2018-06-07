@@ -9,12 +9,14 @@ var InitialPreferencesController = function( model, view ){
 		var surroundings = $("#surroundings").val();
 		var distance = $("#distance").val();
 
-		if (model.checkCity(city) == 1){
+		var check = model.checkCity(city);
+		console.log(check);
+		//if (check == 1){
 			model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
 			model.initialPreferencesDone();
-		} else {
+	//	} else {
 			//alert("Wij hebben helaas geen data voor de door u opgegeven gemeente.");
-		}
+	//	}
 
 
 
