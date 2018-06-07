@@ -49,10 +49,10 @@ var InitialPreferencesView = function( model, container ){
 	this.update = function( args ){
 
 		if( args == "dilemma20Done" ){
-			var availableTags = model.municipalities;
+			var availableTags = model.getMunicipalities();
 
 			$( function() {
-					// var testarray = ["auto", "drankje"];
+					var testarray = ["auto", "drankje"];
 					console.log(availableTags);
 					 $( "#city" ).autocomplete({
 						 source: availableTags

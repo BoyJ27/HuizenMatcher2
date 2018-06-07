@@ -112,11 +112,13 @@ var HousingModel = function( options ){
   ];
 
   var municipalities = [];
+  var newarray = [];
   $.get("ajax/retrieveMunicipalities.php", function(data) {
-    municipalities = data;
+    newarray = data;
   }).done(function() {
-    console.log(municipalities);
-    console.log(municipalities[0]);
+    municipalities = JSON.parse(newarray);
+    // console.log("This is the new array: "+municipalities);
+    // console.log(municipalities[0]);
   });
 
   /***********************************************************
@@ -596,12 +598,12 @@ var HousingModel = function( options ){
   ***********************************************************/
 // dit is nodig om ze vanuit een andere js te kunnen aanroepen
   this.o                    = o;
-  this.municipalities       = municipalities;
 
   this.createUser                 = createUser;
   this.getHouses = function(a,b,c) {
     return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
   }
+
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
@@ -614,6 +616,8 @@ var HousingModel = function( options ){
   this.setDilemmaA                = setDilemmaA;
   this.setDilemmaB                = setDilemmaB;
   this.setDilemmaNo               = setDilemmaNo;
+
+  this.getMunicipalities       = function(){return municipalities} ;
 
   this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;

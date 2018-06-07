@@ -4,7 +4,7 @@
 
 	$database = new medoo();
 
-  $data = $database->select("municipalities", "municipality");
+  $data = $database->select("municipalities","municipality");
 
-print_r($data);
+  echo json_encode($data); //omzetten naar fatsoenlijk array formaat 
 ?>
