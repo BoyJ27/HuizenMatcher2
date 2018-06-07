@@ -6,11 +6,9 @@ var HousingModel = function( options ){
 
   // These options should be set from outside the model with
   // the random conditions assigned
-
-  var gamecount = 1;
   var defaults = {
-
   };
+
   var options = $.extend(defaults,options);
   var o = options;
   /***********************************************************
@@ -159,32 +157,13 @@ var HousingModel = function( options ){
       });
   }
 
-  // After the user has filled out everything, update the user data.
-  updateUser = function(mail, age){
-    var email = mail;
-    leeftijd = age;
-
-    $.post( "ajax/insertDemo.php",
-      {
-        userId: currentUserId,
-        conditie: o.condition,
-        email: email,
-        leeftijd: leeftijd,
-        opleiding: opleiding,
-        man: geslacht,
-        woon: woon,
-        inkomen: inkomen,
-      }).done(function(){
-      });
-  }
-
   checkCity = function(cityval){
     var city = cityval;
     $(function(){
     $.ajax({
       type: "POST",
       url: 'ajax/checkCity.php',
-      data: ({citycheck:city}),
+      data: city,
     });
     });
 
@@ -214,56 +193,6 @@ var HousingModel = function( options ){
         console.log("The question + answer are saved in the DB");
       });
 
-  }
-
-  setAgqQuestions = function(answers) {
-    var q1 = answers[0];
-    var q2 = answers[1];
-    var q3 = answers[2];
-    var q4 = answers[3];
-    var q5 = answers[4];
-    var q6 = answers[5];
-    var q7 = answers[6];
-    var q8 = answers[7];
-    var q9 = answers[8];
-    var q10 = answers[9];
-    var q11 = answers[10];
-    var q12 = answers[11];
-    var q13 = answers[12];
-    var q14 = answers[13];
-    var q15 = answers[14];
-    var q16 = answers[15];
-    var q17 = answers[16];
-    var q18 = answers[17];
-    var q19 = answers[18];
-    var q20 = answers[19];
-
-    $.post("ajax/insertAgqQuestions.php",
-      {
-        userId: currentUserId,
-        q1: q1,
-        q2: q2,
-        q3: q3,
-        q4: q4,
-        q5: q5,
-        q6: q6,
-        q7: q7,
-        q8: q8,
-        q9: q9,
-        q10: q10,
-        q11: q11,
-        q12: q12,
-        q13: q13,
-        q14: q14,
-        q15: q15,
-        q16: q16,
-        q17: q17,
-        q18: q18,
-        q19: q19,
-        q20: q20
-      }).done(function(){
-      console.log("The question + answer are saved in the DB");
-    });
   }
 
   setCity = function(cityval) {
@@ -467,36 +396,6 @@ var HousingModel = function( options ){
 
   }
 
-  setGame = function () {
-    $.post("ajax/insertGame.php",
-      {
-        userId: currentUserId
-      }).done(function(){
-        console.log("Game saved.");
-      });
-  }
-
-  setPlaythrough = function (playt) {
-    var playthrough = playt;
-
-    $.post("ajax/insertPlaythrough.php",
-      {
-        userId: currentUserId,
-        playthrough: playthrough
-      }).done(function(){
-        console.log("Playthrough saved.");
-      });
-  }
-
-  setFinalStop = function () {
-    $.post("ajax/insertFinalStop.php",
-    {
-      userId: currentUserId
-    }).done(function(){
-      console.log("Final stop saved.");
-    });
-  }
-
   setConsent = function (value){
     consent = value;
   }
@@ -685,34 +584,26 @@ var HousingModel = function( options ){
   this.o                    = o;
 
   this.createUser                 = createUser;
-  this.updateUser                 = updateUser;
-
   this.getHouses = function(a,b,c) {
     return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
   }
-
   this.houses                     = houses;
-
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
 
-  this.setAgqQuestions            = setAgqQuestions;
-  this.setDemoQuestions            = setDemoQuestions;
+
+  this.setDemoQuestions           = setDemoQuestions;
   this.setPreferences             = setPreferences;
   this.setEvaluation              = setEvaluation;
   this.setCity                    = setCity;
   this.setDilemma                 = setDilemma;
-  this.setGame                    = setGame;
-  this.setPlaythrough             = setPlaythrough;
-  this.setFinalStop               = setFinalStop;
-  this.gamecount                  = gamecount;
   this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;
 
   this.setConsent           = setConsent;
   this.demographicsCheck    = demographicsCheck;
   this.consentDone          = consentDone;
-  this.evaluationDone          = evaluationDone;
+  this.evaluationDone       = evaluationDone;
   this.initialPreferencesDone     = initialPreferencesDone;
   this.instructionsDone     = instructionsDone;
   this.dilemma1Done          = dilemma1Done;
