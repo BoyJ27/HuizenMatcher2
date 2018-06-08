@@ -42,7 +42,7 @@ var Dilemma8View = function (model, container) {
       this.attributesHouseB = attributesHouseB;
 
       //Creating the table with house attributes
-      var table = $( "<table class='case'></table>"); // The whole table
+      var table = $( "<table class='case' id='case8'></table>"); // The whole table
       var headers = $( "<tr><th>Huis A</th><th class='centercell'>Attributen</th><th>Huis B</th></tr>" ); //The headers
       var priceRow = $("<tr><td>&euro;"+houseA1+"</td><td class='centercell'>Prijs</td><td>&euro;"+houseB1+"</td></tr>"); // The attribute price
       var typeRow = $("<tr><td>"+houseA2+"</td><td class='centercell'>Woningtype</td><td>"+houseB2+"</td></tr>");

@@ -13,7 +13,7 @@ var Dilemma2Controller = function ( model, view ){
     //Look into table with class 'case' for fields with 'input', 'radio', AND 'checked'
     //Retrieve from the chosen house the attributes and create a 010101 array to store
     //in database.
-    $("table.case input:radio:checked").each(function () {
+    $("table#case2 input:radio:checked").each(function () {
       checked = 1; // user made a choice
       house = this.value; //get the chosen house (house A, house B or no preference)
 
@@ -31,7 +31,7 @@ var Dilemma2Controller = function ( model, view ){
       }
     });
 
-    // //If participants did not make a choice, let them know:
+    //If participants did not make a choice, let them know:
     // if (checked!=1) {
     //  alert("Geef alstublieft een voorkeur op!");
     //  return;
