@@ -6,5 +6,5 @@
 
   $data = $database->select("municipalities","municipality");
 
-  echo json_encode($data); //omzetten naar fatsoenlijk array formaat 
+  echo json_encode($data); //omzetten naar fatsoenlijk array formaat
 ?>

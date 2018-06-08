@@ -113,7 +113,7 @@ var HousingModel = function( options ){
 
   var municipalities = [];
   var newarray = [];
-  $.get("ajax/retrieveMunicipalities.php", function(data) {
+  $.get("ajax/getMunicipalities.php", function(data) {
     newarray = data;
   }).done(function() {
     municipalities = JSON.parse(newarray);
