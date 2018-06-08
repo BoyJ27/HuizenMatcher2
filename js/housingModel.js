@@ -131,7 +131,7 @@ var count = municipalities.length;
   }
   return false;
   }
-  
+
   /***********************************************************
             Helper Functions
   ***********************************************************/
@@ -618,6 +618,8 @@ var count = municipalities.length;
   this.getHouses = function(a,b,c) {
     return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
   }
+
+  this.getCurrentUserID = function(){return currentUserId};
 
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
