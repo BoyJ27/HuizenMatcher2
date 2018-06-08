@@ -111,6 +111,16 @@ var HousingModel = function( options ){
     dilemma20
   ];
 
+  var municipalities = [];
+  var newarray = [];
+  $.get("ajax/retrieveMunicipalities.php", function(data) {
+    newarray = data;
+  }).done(function() {
+    municipalities = JSON.parse(newarray);
+    // console.log("This is the new array: "+municipalities);
+    // console.log(municipalities[0]);
+  });
+
   /***********************************************************
             Helper Functions
   ***********************************************************/
@@ -195,7 +205,7 @@ var HousingModel = function( options ){
         gender: gender,
         education: education,
         family: family,
-        remarks: remarks,
+        remarks: remarks
       }).done(function(){
         console.log("The question + answer are saved in the DB");
       });
@@ -600,10 +610,10 @@ var HousingModel = function( options ){
   this.getHouses = function(a,b,c) {
     return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
   }
+
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
-
 
   this.setDemoQuestions           = setDemoQuestions;
   this.setPreferences             = setPreferences;
@@ -613,6 +623,8 @@ var HousingModel = function( options ){
   this.setDilemmaA                = setDilemmaA;
   this.setDilemmaB                = setDilemmaB;
   this.setDilemmaNo               = setDilemmaNo;
+
+  this.getMunicipalities       = function(){return municipalities} ;
 
   this.checkCity = checkCity;
   this.screensizeOkay = screensizeOkay;

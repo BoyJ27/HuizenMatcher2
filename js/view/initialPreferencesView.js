@@ -7,6 +7,7 @@ var InitialPreferencesView = function( model, container ){
 	var form				= $( "<form role='form'>" );
 
   var citytext     = $('<div style="font-size: 16px; font-weight:bold;  width: 100%"><p class="marginbottom">Geef aan in welke <strong>gemeente</strong> u wilt zoeken.*</p> ');
+	//id = city
 	var cityinput 			= $( '<div style="font-weight:bold; font-size: 16px; margin-bottom: 15px; width: 100%" class="input-group"><input style="font-weight: normal; width: 400px" type="text" pattern="\d*" id="city" placeholder="Geef de gemeente op waarin u wil zoeken.">');
 	var budgettext 			= $('<div style="font-size: 16px; font-weight:bold;  width: 100%"><p class="marginbottom">Geef aan wat uw maximale budget is.*</p> ');
 	var budgetinput   	= $( '<div style="font-weight:bold; font-size: 16px; margin-bottom: 15px; width: 100%" class="input-group"><input style="font-weight: normal; width: 400px" type="number" pattern="\d*" id="budget" placeholder="Geef een indicatie van uw budget (in euros).">');
@@ -38,6 +39,7 @@ var InitialPreferencesView = function( model, container ){
 	this.form 							= form;
 
 
+
 	/***********************************************************
 							 Update
 	***********************************************************/
@@ -47,7 +49,17 @@ var InitialPreferencesView = function( model, container ){
 	this.update = function( args ){
 
 		if( args == "dilemma20Done" ){
+			var availableTags = model.getMunicipalities();
+
+			$( function() {
+					var testarray = ["auto", "drankje"];
+					console.log(availableTags);
+					 $( "#city" ).autocomplete({
+						 source: availableTags
+				});
+			});
 			container.show();
+
 		}
 		if( args == 'initialPreferencesDone'){
 			container.hide();
