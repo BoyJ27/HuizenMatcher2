@@ -74,12 +74,12 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
             $.get("ajax/getSurroundings.php", {id: houseB}).done(function(data) { houseB5 = data; } );
             $.get("ajax/getDistance.php", {id: houseB}).done(function(data) { houseB6 = data; } );
 
-            houseC1 = $.get("ajax/getPrice.php", {id: houseC}).done(function(data) { houseC1 = data; } );
-            houseC2 = $.get("ajax/getType.php", {id: houseC}).done(function(data) { houseC2 = data; } );
-            houseC3 = $.get("ajax/getSurface.php", {id: houseC}).done(function(data) { houseC3 = data; } );
-            houseC4 = $.get("ajax/getBedrooms.php", {id: houseC}).done(function(data) { houseC4 = data; } );
-            houseC5 = $.get("ajax/getSurroundings.php", {id: houseC}).done(function(data) { houseC5 = data; } );
-            houseC6 = $.get("ajax/getDistance.php", {id: houseC}).done(function(data) { houseC6 = data; } );
+            $.get("ajax/getPrice.php", {id: houseC}).done(function(data) { houseC1 = data; } );
+            $.get("ajax/getType.php", {id: houseC}).done(function(data) { houseC2 = data; } );
+            $.get("ajax/getSurface.php", {id: houseC}).done(function(data) { houseC3 = data; } );
+            $.get("ajax/getBedrooms.php", {id: houseC}).done(function(data) { houseC4 = data; } );
+            $.get("ajax/getSurroundings.php", {id: houseC}).done(function(data) { houseC5 = data; } );
+            $.get("ajax/getDistance.php", {id: houseC}).done(function(data) { houseC6 = data; } );
 
             //Setting a timeout to allow for all variables to load
             setTimeout (function(){
