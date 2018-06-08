@@ -37,35 +37,23 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
         //Implement a timeout of 20ms to make sure that the the budget and municipality are successfully retrieved
         setTimeout(function(){
           var ids = [];
+          var three = [];
 
           //Get a list of house ID's in the municipality under the maxbudget
           $.get("ajax/getHouseIDs.php", {gemeente: municipality, maxBudget: budget}).done(function (data) {
             ids = JSON.parse(data);
             console.log("This is the new array: "+ids);
+            //keep three
+            three.push(ids[0], ids[1], ids[2]);
           });
 
           //Implement a timeout of 20ms to make sure that the the list of IDs is successfully retrieved
           setTimeout(function(){
-            var houseA1 = model.getHouses(7, 0, 0);
-            var houseA2 = model.getHouses(7, 0, 1);
-            var houseA3 = model.getHouses(7, 0, 2);
-            var houseA4 = model.getHouses(7, 0, 3);
-            var houseA5 = model.getHouses(7, 0, 4);
-            var houseA6 = model.getHouses(7, 0, 5);
 
-            var houseB1 = model.getHouses(7, 1, 0);
-            var houseB2 = model.getHouses(7, 1, 1);
-            var houseB3 = model.getHouses(7, 1, 2);
-            var houseB4 = model.getHouses(7, 1, 3);
-            var houseB5 = model.getHouses(7, 1, 4);
-            var houseB6 = model.getHouses(7, 1, 5);
-
-            var houseC1 = model.getHouses(7, 1, 0);
-            var houseC2 = model.getHouses(7, 1, 1);
-            var houseC3 = model.getHouses(7, 1, 2);
-            var houseC4 = model.getHouses(7, 1, 3);
-            var houseC5 = model.getHouses(7, 1, 4);
-            var houseC6 = model.getHouses(7, 1, 5);
+            console.log("These are the id's of the three: "+three);
+            var houseA1, houseA2, houseA3, houseA4, houseA5, houseA6;
+            var houseB1, houseB2, houseB3, houseB4, houseB5, houseB6;
+            var houseC1, houseC2, houseC3, houseC4, houseC5, houseC6;
 
             //Creating the table with house attributes
             var table = $( "<table class='case'></table>"); // The whole table
@@ -84,7 +72,7 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
             // Putting the table in the container
             suggestieCont.append(table);
             container.show();
-          }, 20);
+          }, 50);
         }, 20);
       }, 50);
 		}

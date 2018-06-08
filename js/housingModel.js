@@ -127,9 +127,21 @@ var city = cityvar;
 var count = municipalities.length;
   for (var i=0;i<count;i++)
   {
-      if(municipalities[i]===city){return true;}
+      if (municipalities[i]===city) {
+        return true;
+      }
   }
-  return false;
+    return false;
+  }
+
+  checkHouses = function(arrayval) {
+    var array = arrayval;
+
+    if (array.length > 2) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /***********************************************************
@@ -638,6 +650,7 @@ var count = municipalities.length;
   this.getMunicipalities       = function(){return municipalities} ;
   this.municipalities = municipalities;
   this.checkCity = checkCity;
+  this.checkHouses = checkHouses;
   this.screensizeOkay = screensizeOkay;
 
   this.setConsent           = setConsent;
