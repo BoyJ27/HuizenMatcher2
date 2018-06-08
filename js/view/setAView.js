@@ -40,13 +40,13 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
       //Creating the table with house attributes
       var table = $( "<table class='case'></table>"); // The whole table
       var headers = $( "<tr><th class='twentyfive'>Attributen</th><th class='twentyfive'>Huis A</th><th class='twentyfive'>Huis B</th><th class='twentyfive'>Huis C</th></tr>" ); //The headers
-      var priceRow = $("<tr><td>Prijs</td><td id='lighter'>&euro;"+houseA1+"</td><td id='lighter'>&euro;"+houseB1+"</td><td id='lighter'>&euro;"+houseC1+"</td></tr>"); // The attribute price
-      var typeRow = $("<tr><td>Woningtype</td><td id='lighter'>"+houseA2+"</td><td id='lighter'>"+houseB2+"</td><td id='lighter'>"+houseC2+"</td></tr>");
-      var surfaceRow = $("<tr><td>Woonoppervlak</td><td id='lighter'>"+houseA3+" m<sup>2</sup></td><td id='lighter'>"+houseB3+" m<sup>2</sup></td><td id='lighter'>"+houseC3+" m<sup>2</sup></td></tr>");
-      var bedroomRow = $("<tr><td>Aantal slaapkamers</td><td id='lighter'>"+houseA4+"</td><td id='lighter'>"+houseB4+"</td><td id='lighter'>"+houseC4+"</td></tr>");
-      var surroundingsRow = $("<tr><td>Bebouwde omgeving</td><td id='lighter'>"+houseA5+"</td><td id='lighter'>"+houseB5+"</td><td id='lighter'>"+houseC5+"</td></tr>");
-      var distanceRow = $("<tr><td>Afstand tot basisschooltext</td><td id='lighter'>"+houseA6+" m</td><td id='lighter'>"+houseB6+" m</td><td id='lighter'>"+houseC6+" m</td></tr>");
-      var lastRow = $("<tr><td>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' name='evalA' value='evalA'></td><td class='twentyfive' id='lighter'><input type='number' name='evalB' value='evalB'></td><td class='twentyfive' id='lighter'><input type='number' name='evalC' value='evalC'></td></tr>");
+      var priceRow = $("<tr><td class='twentyfive'>Prijs</td><td class='twentyfive' id='lighter'>&euro;"+houseA1+"</td><td class='twentyfive' id='lighter'>&euro;"+houseB1+"</td><td class='twentyfive' id='lighter'>&euro;"+houseC1+"</td></tr>"); // The attribute price
+      var typeRow = $("<tr><td class='twentyfive'>Woningtype</td><td class='twentyfive' id='lighter'>"+houseA2+"</td><td class='twentyfive' id='lighter'>"+houseB2+"</td><td class='twentyfive' id='lighter'>"+houseC2+"</td></tr>");
+      var surfaceRow = $("<tr><td class='twentyfive'>Woonoppervlak</td><td class='twentyfive' id='lighter'>"+houseA3+" m<sup>2</sup></td><td class='twentyfive' id='lighter'>"+houseB3+" m<sup>2</sup></td><td class='twentyfive' id='lighter'>"+houseC3+" m<sup>2</sup></td></tr>");
+      var bedroomRow = $("<tr><td class='twentyfive'>Aantal slaapkamers</td><td class='twentyfive' id='lighter'>"+houseA4+"</td><td class='twentyfive' id='lighter'>"+houseB4+"</td><td class='twentyfive' id='lighter'>"+houseC4+"</td></tr>");
+      var surroundingsRow = $("<tr><td class='twentyfive'>Bebouwde omgeving</td><td class='twentyfive' id='lighter'>"+houseA5+"</td><td class='twentyfive' id='lighter'>"+houseB5+"</td><td class='twentyfive' id='lighter'>"+houseC5+"</td></tr>");
+      var distanceRow = $("<tr><td class='twentyfive'>Afstand tot basisschooltext</td><td class='twentyfive' id='lighter'>"+houseA6+" m</td><td class='twentyfive' id='lighter'>"+houseB6+" m</td><td class='twentyfive' id='lighter'>"+houseC6+" m</td></tr>");
+      var lastRow = $("<tr><td class='twentyfive'>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' name='evalA' value='evalA'></td><td class='twentyfive' id='lighter'><input type='number' name='evalB' value='evalB'></td><td class='twentyfive' id='lighter'><input type='number' name='evalC' value='evalC'></td></tr>");
 
       //Putting the rows into the Table
       table.append(headers, priceRow, typeRow, surfaceRow, bedroomRow, surroundingsRow, distanceRow, lastRow);

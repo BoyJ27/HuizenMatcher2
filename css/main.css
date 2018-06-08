@@ -33,9 +33,19 @@ th.centercell {
 }
 
 #lighter {
-	background-color: #fafafa;
+	background-color: #e6e6e6;
+}
+th.twentyfive {
+	width:25%;
 }
 
+td.twentyfive {
+	width: 25%;
+}
+
+.twentyfive {
+	width: 25%;
+}
 
 th {
 	padding-top:5px;
@@ -76,6 +86,7 @@ h1{
 #right-header{
 	float: right;
 }
+
 .helper {
 	display: inline-block;
 	height: 100%;
@@ -449,8 +460,4 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
 
 .droppedtext p {
 	margin-bottom: 0px;
-}
-
-.twentyfive {
-	width: 25%;
 }
