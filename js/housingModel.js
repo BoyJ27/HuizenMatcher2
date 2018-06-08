@@ -121,6 +121,12 @@ var HousingModel = function( options ){
     // console.log(municipalities[0]);
   });
 
+var three = [];
+
+setThree = function (arrayval) {
+  var array = arrayval;
+  three.push(array[0], array[1], array[2]);
+}
 
 checkCity = function(cityvar){
 var city = cityvar;
@@ -632,7 +638,8 @@ var count = municipalities.length;
   }
 
   this.getCurrentUserID = function(){return currentUserId};
-
+  this.getThree         = function(){return three};
+  
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
@@ -646,6 +653,7 @@ var count = municipalities.length;
   this.setDilemmaA                = setDilemmaA;
   this.setDilemmaB                = setDilemmaB;
   this.setDilemmaNo               = setDilemmaNo;
+  this.setThree                   = setThree;
 
   this.getMunicipalities       = function(){return municipalities} ;
   this.municipalities = municipalities;

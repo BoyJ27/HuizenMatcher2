@@ -37,15 +37,15 @@ var suggestieCont = $('<div id="dilemmaCont"></div>');
         //Implement a timeout of 20ms to make sure that the the budget and municipality are successfully retrieved
         setTimeout(function(){
           var ids = [];
-          var three = [];
+          var three = model.getThree();
 
           //Get a list of house ID's in the municipality under the maxbudget
-          $.get("ajax/getHouseIDs.php", {gemeente: municipality, maxBudget: budget}).done(function (data) {
-            ids = JSON.parse(data);
-            console.log("This is the new array: "+ids);
-            //keep three
-            three.push(ids[0], ids[1], ids[2]);
-          });
+          // $.get("ajax/getHouseIDs.php", {gemeente: municipality, maxBudget: budget}).done(function (data) {
+          //   ids = JSON.parse(data);
+          //   console.log("This is the new array: "+ids);
+          //   //keep three
+          //   three.push(ids[0], ids[1], ids[2]);
+          // });
 
           //Implement a timeout of 20ms to make sure that the the list of IDs is successfully retrieved
           setTimeout(function(){
