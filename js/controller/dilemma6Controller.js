@@ -13,7 +13,7 @@ var Dilemma6Controller = function ( model, view ){
     //Look into table with class 'case' for fields with 'input', 'radio', AND 'checked'
     //Retrieve from the chosen house the attributes and create a 010101 array to store
     //in database.
-    $("table.case input:radio:checked").each(function () {
+    $("table#case6 input:radio:checked").each(function () {
       checked = 1; // user made a choice
       house = this.value; //get the chosen house (house A, house B or no preference)
 

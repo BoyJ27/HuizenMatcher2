@@ -121,6 +121,7 @@ var HousingModel = function( options ){
     // console.log(municipalities[0]);
   });
 
+
 checkCity = function(cityvar){
 var city = cityvar;
 var count = municipalities.length;
@@ -130,7 +131,6 @@ var count = municipalities.length;
   }
   return false;
   }
-
   /***********************************************************
             Helper Functions
   ***********************************************************/

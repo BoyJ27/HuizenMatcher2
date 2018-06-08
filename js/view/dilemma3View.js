@@ -31,7 +31,7 @@ var Dilemma3View = function (model, container) {
       var houseB4 = model.getHouses(2, 1, 3);
       var houseB5 = model.getHouses(2, 1, 4);
       var houseB6 = model.getHouses(2, 1, 5);
-      
+
       //Create arrays to carry the 0101 for each house
       var attributesHouseA = [];
       var attributesHouseB = [];
@@ -44,7 +44,7 @@ var Dilemma3View = function (model, container) {
       this.attributesHouseB = attributesHouseB;
 
       //Creating the table with house attributes
-      var table = $( "<table class='case'></table>"); // The whole table
+      var table = $( "<table class='case' id='case3'></table>"); // The whole table
       var headers = $( "<tr><th>Huis A</th><th class='centercell'>Attributen</th><th>Huis B</th></tr>" ); //The headers
       var priceRow = $("<tr><td>&euro;"+houseA1+"</td><td class='centercell'>Prijs</td><td>&euro;"+houseB1+"</td></tr>"); // The attribute price
       var typeRow = $("<tr><td>"+houseA2+"</td><td class='centercell'>Woningtype</td><td>"+houseB2+"</td></tr>");
