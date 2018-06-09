@@ -10,6 +10,6 @@
 			"userId"			=> $max+1,
 	]);
 
-	echo $max+1;
+	//echo $max+1;
 
 ?>

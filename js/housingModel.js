@@ -183,10 +183,10 @@ var HousingModel = function( options ){
   // experimental condition.
 
   createUser = function(){
-    console.log("Creating user");
+    //console.log("Creating user");
     $.post( "ajax/insertUser.php").done( function( data ) {
         currentUserId = data;
-        console.log(currentUserId);
+        //console.log(currentUserId);
       });
   }
 
@@ -206,14 +206,14 @@ var HousingModel = function( options ){
         family: family,
         remarks: remarks
       }).done(function(){
-        console.log("The question + answer are saved in the DB");
+        //console.log("The question + answer are saved in the DB");
       });
 
   }
 
   setCity = function(cityval) {
     var city = cityval;
-    console.log(city);
+    //console.log(city);
     /*$.post("ajax/insertDemo.php",
       {
         userId: currentUserId,
@@ -251,7 +251,7 @@ var HousingModel = function( options ){
         surroundings: surroundings,
         distance: distance,
       }).done(function(){
-        console.log("The preferences are saved in the DB");
+      //  console.log("The preferences are saved in the DB");
       });
 
   }
@@ -276,7 +276,7 @@ var HousingModel = function( options ){
           distance: distance,
           other: other
       }).done(function(){
-        console.log("The evaluations are saved in the DB");
+        //console.log("The evaluations are saved in the DB");
       });
   }
 
@@ -331,7 +331,7 @@ var HousingModel = function( options ){
       distanceC: distanceC,
       scoreC: scoreC
     }).done(function () {
-      console.log("The suggestions and their scores are stored in the database");
+      //console.log("The suggestions and their scores are stored in the database");
     });
   }
 
@@ -352,7 +352,7 @@ var HousingModel = function( options ){
           evaluation5: evaluation5,
 
       }).done(function(){
-        console.log("The evaluations are saved in the DB");
+        //console.log("The evaluations are saved in the DB");
       });
   }
 
@@ -714,7 +714,7 @@ var HousingModel = function( options ){
   //Potential functions to delete:
   // this.municipalities = municipalities;
   // this.setCity                    = setCity;
-  // this.profileDone          = profileDone;
+  this.profileDone          = profileDone;
 
   //Done's for the views
   this.consentDone          = consentDone;
