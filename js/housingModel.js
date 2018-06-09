@@ -112,43 +112,37 @@ var HousingModel = function( options ){
   ];
 
   var municipalities = [];
-  var newarray = [];
-  $.get("ajax/getMunicipalities.php", function(data) {
-    newarray = data;
-  }).done(function() {
-    municipalities = JSON.parse(newarray);
-    // console.log("This is the new array: "+municipalities);
-    // console.log(municipalities[0]);
+  $.get("ajax/getMunicipalities.php").done(function (data) {
+    municipalities = JSON.parse(data);
   });
-
-var three = [];
-
-setThree = function (arrayval) {
-  var array = arrayval;
-  three.push(array[0], array[1], array[2]);
-}
-
-checkCity = function(cityvar){
-var city = cityvar;
-var count = municipalities.length;
-  for (var i=0;i<count;i++)
-  {
-      if (municipalities[i]===city) {
-        return true;
-      }
-  }
-    return false;
-  }
-
-  checkHouses = function(arrayval) {
+  
+  var three = [];
+  setThree = function (arrayval) {
     var array = arrayval;
+    three.push(array[index1], array[index2], array[index3]);
+  }
 
-    if (array.length > 2) {
-      return true;
-    } else {
+  checkCity = function(cityvar){
+  var city = cityvar;
+  var count = municipalities.length;
+    for (var i=0;i<count;i++)
+    {
+        if (municipalities[i]===city) {
+          return true;
+        }
+    }
       return false;
     }
-  }
+
+    checkHouses = function(arrayval) {
+      var array = arrayval;
+
+      if (array.length > 2) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 
   /***********************************************************
             Helper Functions
@@ -156,12 +150,12 @@ var count = municipalities.length;
 
   // Shuffle the dilemma's Array
   shuffleHouses = function(array){
-    console.log("Shuffling dilemma's...");
-    console.log("Index 0, 0, 0 before shuffle: "+houses[0][0][0]);
-    console.log("Dilemma at start before shuffle: "+houses[0][2]);
+    // console.log("Shuffling dilemma's...");
+    // console.log("Index 0, 0, 0 before shuffle: "+houses[0][0][0]);
+    // console.log("Dilemma at start before shuffle: "+houses[0][2]);
     var currentIndex = array.length; // Start at the end of the array
 
-    console.log("current index = "+currentIndex);
+    // console.log("current index = "+currentIndex);
     var temporaryValue, randomIndex;
 
       // While there are still array elements left
@@ -175,8 +169,8 @@ var count = municipalities.length;
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
       }
-      console.log("Index 0, 0, 0 after shuffle: "+houses[0][0][0]);
-      console.log("Dilemma at start after shuffle: "+houses[0][2]);
+      // console.log("Index 0, 0, 0 after shuffle: "+houses[0][0][0]);
+      // console.log("Dilemma at start after shuffle: "+houses[0][2]);
       return array;
   }
 
@@ -639,7 +633,7 @@ var count = municipalities.length;
 
   this.getCurrentUserID = function(){return currentUserId};
   this.getThree         = function(){return three};
-  
+
   this.houses                     = houses;
   this.shuffleHouses              = shuffleHouses;
   this.createMatrix               = createMatrix;
