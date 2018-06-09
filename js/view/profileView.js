@@ -1,6 +1,6 @@
 var ProfileView = function (model, container){
 
-  var introduction = $("<p>Vul alsjeblieft ook de volgende vragen over juzelf in. We slaan alle informatie anoniem en confidentieel op. Het kan niet terug getraceerd worden naar u als persoon. We gebruiken de informatie alleen voor onderzoeksdoeleinden.</p>")
+  var introduction = $("<p>Vul alstublieft ook de volgende vragen over uzelf in. We slaan alle informatie anoniem en confidentieel op. Het kan niet terug getraceerd worden naar u als persoon. We gebruiken de informatie alleen voor onderzoeksdoeleinden.</p>")
   var form				= $( "<form role='form'>" );
 
   var geslachttext     = $('<div style="font-size: 15px; font-weight:bold;  width: 100%"><p class="marginbottom">Geef alsjeblieft uw geslacht aan.*</p> ');

@@ -34,7 +34,11 @@ var EvaluationController = function(model, view) {
 
 		var other = $("#other").val();
 
+<<<<<<< HEAD
 		// console.log("the price is: "+price+", the type is: "+type+", the surface is: "+surface+", the bedrooms is: "+bedrooms+", the surroundings is: "+surroundings+", the distance is: "+distance+", other is: "+other);
+=======
+		//console.log("the price is: "+price+", the type is: "+type+", the surface is: "+surface+", the bedrooms is: "+bedrooms+", the surroundings is: "+surroundings+", the distance is: "+distance+", other is: "+other);
+>>>>>>> 97bec264144f61e8b83ca98fe688cc844ee49962
 	 /*if( $( '#answertable input:checked' ).length < 20 ){
 			alert( 'Kies de set van uw voorkeur!' );
 		} else {

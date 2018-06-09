@@ -185,10 +185,10 @@ var HousingModel = function( options ){
   // experimental condition.
 
   createUser = function(){
-    console.log("Creating user");
+    //console.log("Creating user");
     $.post( "ajax/insertUser.php").done( function( data ) {
         currentUserId = data;
-        console.log(currentUserId);
+        //console.log(currentUserId);
       });
   }
 
@@ -209,12 +209,35 @@ var HousingModel = function( options ){
         family: family,
         remarks: remarks
       }).done(function(){
-        console.log("The question + answer are saved in the DB");
+        //console.log("The question + answer are saved in the DB");
       });
 
   }
 
+<<<<<<< HEAD
   //Function to set the user's selected preferences in attributes
+=======
+  setCity = function(cityval) {
+    var city = cityval;
+    //console.log(city);
+    /*$.post("ajax/insertDemo.php",
+      {
+        userId: currentUserId,
+        age: age,
+        gender: gender,
+        experienceM: experienceM,
+        selfrate: selfrate,
+        experienceG: experienceG,
+        remarks: remarks,
+        email: email
+      }).done(function(){
+        console.log("The question + answer are saved in the DB");
+      });
+      */
+
+  }
+
+>>>>>>> 97bec264144f61e8b83ca98fe688cc844ee49962
   setPreferences = function(cityval, budgetval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval) {
     var city = cityval;
     var budget = budgetval;
@@ -235,7 +258,7 @@ var HousingModel = function( options ){
         surroundings: surroundings,
         distance: distance,
       }).done(function(){
-        console.log("The preferences are saved in the DB");
+      //  console.log("The preferences are saved in the DB");
       });
 
   }
@@ -261,7 +284,7 @@ var HousingModel = function( options ){
           distance: distance,
           other: other
       }).done(function(){
-        console.log("The evaluations are saved in the DB");
+        //console.log("The evaluations are saved in the DB");
       });
   }
 
@@ -316,7 +339,7 @@ var HousingModel = function( options ){
       distanceC: distanceC,
       scoreC: scoreC
     }).done(function () {
-      console.log("The suggestions and their scores are stored in the database");
+      //console.log("The suggestions and their scores are stored in the database");
     });
   }
 
@@ -337,7 +360,7 @@ var HousingModel = function( options ){
           evaluation5: evaluation5,
 
       }).done(function(){
-        console.log("The evaluations are saved in the DB");
+        //console.log("The evaluations are saved in the DB");
       });
   }
 
@@ -702,7 +725,7 @@ var HousingModel = function( options ){
   //Potential functions to delete:
   // this.municipalities = municipalities;
   // this.setCity                    = setCity;
-  // this.profileDone          = profileDone;
+  this.profileDone          = profileDone;
 
   //Done's for the views
   this.consentDone          = consentDone;
