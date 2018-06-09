@@ -1,4 +1,6 @@
 var SetAController = function ( model, view ){
+
+  //Retrieve all attributes from the shown houses
   houseA1 = view.houseA1;
   houseA2 = view.houseA2;
   houseA3 = view.houseA3;
@@ -20,12 +22,13 @@ var SetAController = function ( model, view ){
   houseC5 = view.houseC5;
   houseC6 = view.houseC6;
 
-  //WHen the next button is clicked, the following needs to happen:
+  //When the next button is clicked, the following needs to happen:
   view.volgendeButton.click(function(){
     var scoreA = $("#scoreA").val();
     var scoreB = $("#scoreB").val();
     var scoreC = $("#scoreC").val();
 
+    //Function to check whether the value is between 1 and 10
     scoreCheck = function(scoreval){
       score = scoreval;
       if (score > 0 && score < 11) {
@@ -40,7 +43,6 @@ var SetAController = function ( model, view ){
 
       //Write the attributes and the house scores to Database
       model.insertScores(houseA1, houseA2, houseA3, houseA4, houseA5, houseA6, scoreA, houseB1, houseB2, houseB3, houseB4, houseB5, houseB6, scoreB, houseC1, houseC2, houseC3, houseC4, houseC5, houseC6, scoreC);
-      //(pricevalA, typevalA, surfacevalA, bedroomsvalA, surroundingsvalA, distancevalA, scorevalA, pricevalB, typevalB, surfacevalB, bedroomsvalB, surroundingsvalB, distancevalB, scorevalB, pricevalC, typevalC, surfacevalC, bedroomsvalC, surroundingsvalC, distancevalC, scorevalC)
 
       //When done:
       model.setADone();

@@ -10,8 +10,12 @@ var ProfileController = function ( model, view ){
     if( gender != 0  && education != 0 && family != 0  && age.length != 0 && age > 0) {
       model.setDemoQuestions(age, gender, education, family, remarks);
       model.profileDone();
+    } else if (age < 0) {
+      alert( "Vul alstublieft uw echte leeftijd in");
+      return;
     } else {
-      alert( 'U bent waarschijnlijk een vraag vergeten!' );
+      alert( 'Vul alstublieft bij alle vragen een antwoord in!' );
+      return;
     }
 
   });
