@@ -17,7 +17,7 @@ var SetAView = function (model, container){
 
     //When the initial preferences view is done, the following needs to happen:
 		if( args == "initialPreferencesDone" ){
-      
+
       //Implement a timeout of 50ms to make sure that the preferences are first saved in the DB before continuing
       setTimeout(function(){
 
@@ -95,7 +95,7 @@ var SetAView = function (model, container){
               var bedroomRow = $("<tr><td class='twentyfive'>Aantal slaapkamers</td><td class='twentyfive' id='lighter'>"+houseA4+"</td><td class='twentyfive' id='lighter'>"+houseB4+"</td><td class='twentyfive' id='lighter'>"+houseC4+"</td></tr>");
               var surroundingsRow = $("<tr><td class='twentyfive'>Bebouwde omgeving</td><td class='twentyfive' id='lighter'>"+houseA5+"</td><td class='twentyfive' id='lighter'>"+houseB5+"</td><td class='twentyfive' id='lighter'>"+houseC5+"</td></tr>");
               var distanceRow = $("<tr><td class='twentyfive'>Afstand tot basisschool</td><td class='twentyfive' id='lighter'>"+houseA6+" m</td><td class='twentyfive' id='lighter'>"+houseB6+" m</td><td class='twentyfive' id='lighter'>"+houseC6+" m</td></tr>");
-              var lastRow = $("<tr><td class='twentyfive'>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' name='evalA' value='evalA'></td><td class='twentyfive' id='lighter'><input type='number' name='evalB' value='evalB'></td><td class='twentyfive' id='lighter'><input type='number' name='evalC' value='evalC'></td></tr>");
+              var lastRow = $("<tr><td class='twentyfive'>Cijfer voor aanbeveling (1-10)</td><td class='twentyfive' id='lighter' ><input type='number' id='scoreA' value='scoreA'></td><td class='twentyfive' id='lighter'><input type='number' id='scoreB' value='scoreB'></td><td class='twentyfive' id='lighter'><input type='number' id='scoreC' value='scoreC'></td></tr>");
 
               //Putting the rows into the Table
               table.append(headers, priceRow, typeRow, surfaceRow, bedroomRow, surroundingsRow, distanceRow, lastRow);
@@ -105,6 +105,28 @@ var SetAView = function (model, container){
 
               //Show the container
               container.show();
+
+              //Make the attributes of all houses public for the controller to store them in the database
+              this.houseA1 = houseA1;
+              this.houseA2 = houseA2;
+              this.houseA3 = houseA3;
+              this.houseA4 = houseA4;
+              this.houseA5 = houseA5;
+              this.houseA6 = houseA6;
+
+              this.houseB1 = houseB1;
+              this.houseB2 = houseB2;
+              this.houseB3 = houseB3;
+              this.houseB4 = houseB4;
+              this.houseB5 = houseB5;
+              this.houseB6 = houseB6;
+
+              this.houseC1 = houseC1;
+              this.houseC2 = houseC2;
+              this.houseC3 = houseC3;
+              this.houseC4 = houseC4;
+              this.houseC5 = houseC5;
+              this.houseC6 = houseC6;
 
             }, 100);
           }, 50);

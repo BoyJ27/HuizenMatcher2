@@ -115,11 +115,11 @@ var HousingModel = function( options ){
   $.get("ajax/getMunicipalities.php").done(function (data) {
     municipalities = JSON.parse(data);
   });
-  
+
   var three = [];
   setThree = function (arrayval) {
     var array = arrayval;
-    three.push(array[index1], array[index2], array[index3]);
+    three.push(array[0], array[1], array[2]);
   }
 
   checkCity = function(cityvar){
@@ -280,6 +280,61 @@ var HousingModel = function( options ){
       });
   }
 
+  //Function to set the attributes of the suggestions and to set the user's scores of these suggestions
+  // Order: price, type, surface, bedrooms, surroundings, distance to school, score
+  setScores = function (pricevalA, typevalA, surfacevalA, bedroomsvalA, surroundingsvalA, distancevalA, scorevalA, pricevalB, typevalB, surfacevalB, bedroomsvalB, surroundingsvalB, distancevalB, scorevalB, pricevalC, typevalC, surfacevalC, bedroomsvalC, surroundingsvalC, distancevalC, scorevalC) {
+    var houseA1 = pricevalA;
+    var typeA = typevalA;
+    var surfaceA = surfacevalA;
+    var bedroomsA = bedroomsvalA;
+    var surroundingsA = surroundingsvalA;
+    var distanceA = distancevalA;
+    var scoreA = scorevalA;
+
+    var priceB = pricevalB;
+    var typeB = typevalB;
+    var surfaceB = surfacevalB;
+    var bedroomsB = bedroomsvalB;
+    var surroundingsB = surroundingsvalB;
+    var distanceB = distancevalB;
+    var scoreB = scorevalB;
+
+    var priceC = pricevalC;
+    var typeC = typevalC;
+    var surfaceC = surfacevalC;
+    var bedroomsC = bedroomsvalC;
+    var surroundingsC = surroundingsvalC;
+    var distanceC = distancevalC;
+    var scoreC = scorevalC;
+
+    $.post("ajax/insertScores.php", {
+      userId: currentUserId,
+      priceA: houseA1,
+      typeA: typeA,
+      surfaceA: surfaceA,
+      bedroomsA: bedroomsA,
+      surroundingsA: surroundingsA,
+      distanceA: distanceA,
+      scoreA: scoreA,
+      priceB: priceB,
+      typeB: typeB,
+      surfaceB: surfaceB,
+      bedroomsB: bedroomsB,
+      surroundingsB: surroundingsB,
+      distanceB: distanceB,
+      scoreB: scoreB,
+      priceC: priceC,
+      typeC: typeC,
+      surfaceC: surfaceC,
+      bedroomsC: bedroomsC,
+      surroundingsC: surroundingsC,
+      distanceC: distanceC,
+      scoreC: scoreC
+    }).done(function () {
+      console.log("The suggestions and their scores are stored in the database");
+    });
+  }
+
   setLikert = function(eval1, eval2, eval3, eval4, eval5) {
     var evaluation1 = eval1;
     var evaluation2 = eval2;
@@ -343,7 +398,7 @@ var HousingModel = function( options ){
         distance600B: houseMatrixB[14],
         distance1000B: houseMatrixB[15]
       }).done(function(){
-        console.log("Dilemma "+dilemma+" choice = house A has been inserted into the database.");
+        // console.log("Dilemma "+dilemma+" choice = house A has been inserted into the database.");
       });
   }
 
@@ -389,7 +444,7 @@ var HousingModel = function( options ){
         distance600B: houseMatrixB[14],
         distance1000B: houseMatrixB[15]
       }).done(function(){
-        console.log("Dilemma "+dilemma+" choice = house B has been inserted into the database.");
+        // console.log("Dilemma "+dilemma+" choice = house B has been inserted into the database.");
       });
   }
 
@@ -435,7 +490,7 @@ var HousingModel = function( options ){
         distance600B: houseMatrixB[14],
         distance1000B: houseMatrixB[15]
       }).done(function(){
-        console.log("Dilemma "+dilemma+" choice = no preference has been inserted into the database.");
+        // console.log("Dilemma "+dilemma+" choice = no preference has been inserted into the database.");
       });
   }
 
@@ -623,43 +678,46 @@ var HousingModel = function( options ){
   /***********************************************************
             Public Functions
   ***********************************************************/
-// dit is nodig om ze vanuit een andere js te kunnen aanroepen
+  // dit is nodig om ze vanuit een andere js te kunnen aanroepen
   this.o                    = o;
 
-  this.createUser                 = createUser;
-  this.getHouses = function(a,b,c) {
-    return houses[a][b][c]; // Exposes the c-index attribute for b-index house from a-index dilemma
-  }
-
-  this.getCurrentUserID = function(){return currentUserId};
-  this.getThree         = function(){return three};
-
+  //Functions to return model stated variables
+  this.getHouses                  = function(a,b,c) {return houses[a][b][c]}; // Exposes the c-index attribute for b-index house from a-index dilemma
+  this.getCurrentUserID           = function(){return currentUserId}; //Exposes the currentUserId
+  this.getThree                   = function(){return three}; //Exposes the three
+  this.getMunicipalities          = function(){return municipalities} ;
   this.houses                     = houses;
-  this.shuffleHouses              = shuffleHouses;
-  this.createMatrix               = createMatrix;
 
+  //Functions to create / establish variables
+  this.shuffleHouses              = shuffleHouses; //Shuffles the houses array
+  this.createMatrix               = createMatrix; //creates the 0101 entries for a given house and its attributes
+  this.setThree                   = setThree; //Establish the objects in variable 'three'
+
+  //Functions to write to or from the database
+  this.createUser                 = createUser;
   this.setDemoQuestions           = setDemoQuestions;
   this.setPreferences             = setPreferences;
   this.setEvaluation              = setEvaluation;
-  this.setLikert             = setLikert;
-  this.setCity                    = setCity;
-  // this.setDilemma                 = setDilemma;\
+  this.setLikert                  = setLikert;
   this.setDilemmaA                = setDilemmaA;
   this.setDilemmaB                = setDilemmaB;
   this.setDilemmaNo               = setDilemmaNo;
-  this.setThree                   = setThree;
+  this.insertScores               = setScores;
 
-  this.getMunicipalities       = function(){return municipalities} ;
-  this.municipalities = municipalities;
+  //Functions to perform input checks
   this.checkCity = checkCity;
   this.checkHouses = checkHouses;
   this.screensizeOkay = screensizeOkay;
-
   this.setConsent           = setConsent;
   this.demographicsCheck    = demographicsCheck;
+
+  //Potential functions to delete:
+  // this.municipalities = municipalities;
+  // this.setCity                    = setCity;
+  // this.profileDone          = profileDone;
+
+  //Done's for the views
   this.consentDone          = consentDone;
-  this.evaluationDone       = evaluationDone;
-  this.initialPreferencesDone     = initialPreferencesDone;
   this.instructionsDone     = instructionsDone;
   this.dilemma1Done          = dilemma1Done;
   this.dilemma2Done         = dilemma2Done;
@@ -671,19 +729,20 @@ var HousingModel = function( options ){
   this.dilemma8Done         = dilemma8Done;
   this.dilemma9Done         = dilemma9Done;
   this.dilemma10Done        = dilemma10Done;
-  this.dilemma11Done          = dilemma11Done;
-  this.dilemma12Done         = dilemma12Done;
-  this.dilemma13Done         = dilemma13Done;
-  this.dilemma14Done         = dilemma14Done;
-  this.dilemma15Done         = dilemma15Done;
-  this.dilemma16Done         = dilemma16Done;
-  this.dilemma17Done         = dilemma17Done;
-  this.dilemma18Done         = dilemma18Done;
-  this.dilemma19Done         = dilemma19Done;
-  this.dilemma20Done        = dilemma20Done;
-  this.setADone             = setADone;
- this.profileDone          = profileDone;
   this.breakDone            = breakDone;
+  this.dilemma11Done        = dilemma11Done;
+  this.dilemma12Done        = dilemma12Done;
+  this.dilemma13Done        = dilemma13Done;
+  this.dilemma14Done        = dilemma14Done;
+  this.dilemma15Done        = dilemma15Done;
+  this.dilemma16Done        = dilemma16Done;
+  this.dilemma17Done        = dilemma17Done;
+  this.dilemma18Done        = dilemma18Done;
+  this.dilemma19Done        = dilemma19Done;
+  this.dilemma20Done        = dilemma20Done;
+  this.initialPreferencesDone     = initialPreferencesDone;
+  this.setADone             = setADone;
+  this.evaluationDone       = evaluationDone;
 
   /***********************************************************
             Observable Pattern
