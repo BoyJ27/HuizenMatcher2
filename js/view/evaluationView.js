@@ -49,7 +49,7 @@ var EvaluationView = function (model, container){
 		for(i=0; i < 5; i++) {
 			var j = i+1;
 
-			row.append("<td style='width: 10%; text-align: center'><label style='height:100%; width: 100%; margin-bottom: 0px;'><input type='radio' name='quest"+index+"' value='"+ j +"'></label></td>")
+			row.append("<td style='width: 10%; text-align: center'><label style='height:100%; width: 100%; margin-bottom: 0px;'><input type='radio' name='quest1"+index+"' value='"+ j +"'></label></td>")
 
 		}
 
@@ -73,7 +73,7 @@ var EvaluationView = function (model, container){
 		for(i=0; i < 5; i++) {
 			var j = i+1;
 
-			row.append("<td style='width: 10%; text-align: center'><label style='height:100%; width: 100%; margin-bottom: 0px;'><input type='radio' name='quest"+index+"' value='"+ j +"'></label></td>")
+			row.append("<td style='width: 10%; text-align: center'><label style='height:100%; width: 100%; margin-bottom: 0px;'><input type='radio' name='quest2"+index+"' value='"+ j +"'></label></td>")
 
 		}
 

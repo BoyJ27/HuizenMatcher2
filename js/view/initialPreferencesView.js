@@ -53,7 +53,7 @@ var InitialPreferencesView = function( model, container ){
 
 			$( function() {
 					var testarray = ["auto", "drankje"];
-					console.log(availableTags);
+				//	console.log(availableTags);
 					 $( "#city" ).autocomplete({
 						 source: availableTags
 				});
