@@ -122,19 +122,21 @@ var HousingModel = function( options ){
     three.push(array[0], array[1], array[2]);
   }
 
+  //Function to check if the given city exists
   checkCity = function(cityvar){
-  var city = cityvar;
-  var count = municipalities.length;
-    for (var i=0;i<count;i++)
-    {
-        if (municipalities[i]===city) {
-          return true;
-        }
-    }
-      return false;
+      var city = cityvar;
+      var count = municipalities.length;
+        for (var i=0;i<count;i++)
+        {
+            if (municipalities[i]===city) {
+              return true;
+            }
+          }
+          return false;
     }
 
-    checkHouses = function(arrayval) {
+  //Function to check if there are at least three entries in the given array
+  checkHouses = function(arrayval) {
       var array = arrayval;
 
       if (array.length > 2) {
@@ -190,6 +192,7 @@ var HousingModel = function( options ){
       });
   }
 
+  //Function to set the answers of the demographic questions to the 'users' dataset
   setDemoQuestions = function(ageval, genderval, educationval, familyval, remarksval) {
     var age = ageval;
     var gender = genderval;
@@ -211,25 +214,6 @@ var HousingModel = function( options ){
 
   }
 
-  setCity = function(cityval) {
-    var city = cityval;
-    //console.log(city);
-    /*$.post("ajax/insertDemo.php",
-      {
-        userId: currentUserId,
-        age: age,
-        gender: gender,
-        experienceM: experienceM,
-        selfrate: selfrate,
-        experienceG: experienceG,
-        remarks: remarks,
-        email: email
-      }).done(function(){
-        console.log("The question + answer are saved in the DB");
-      });
-      */
-
-  }
 
   setPreferences = function(cityval, budgetval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval) {
     var city = cityval;
@@ -256,6 +240,7 @@ var HousingModel = function( options ){
 
   }
 
+  //Function to set the user's evaluation of importance of the attributes in the 'users' dataset
   setEvaluation = function(priceval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval, otherval) {
     var price = priceval;
     var type = typeval;
@@ -356,6 +341,7 @@ var HousingModel = function( options ){
       });
   }
 
+  //Function to set the attributes of houses if house A was chosen
   setDilemmaA = function (dilemmaval, arrayA, arrayB) {
     var dilemma = dilemmaval;
     var houseMatrixA = arrayA;
@@ -402,6 +388,7 @@ var HousingModel = function( options ){
       });
   }
 
+  //Function to set the attributes of houses if house B was chosen
   setDilemmaB = function (dilemmaval, arrayA, arrayB) {
     var dilemma = dilemmaval;
     var houseMatrixA = arrayA;
@@ -448,6 +435,7 @@ var HousingModel = function( options ){
       });
   }
 
+  //Function to set the attributes of houses if no preference was chosen
   setDilemmaNo = function (dilemmaval, arrayA, arrayB) {
     var dilemma = dilemmaval;
     var houseMatrixA = arrayA;
