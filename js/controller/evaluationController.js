@@ -34,24 +34,36 @@ var EvaluationController = function(model, view) {
 
 		var other = $("#other").val();
 
-	 /*if( $( '#answertable input:checked' ).length < 20 ){
-			alert( 'Kies de set van uw voorkeur!' );
-		} else {
-			var answers = [];
+		/////////////////////////////////CHECKING/////////////////////////////////////////////////
+		var evaluationCheck = false;
+		var importanceCheck = false;
 
-			$("#answertable .item-row").each(function(item){
-				var questionId = $(this).attr('id');
-				var val 	   = $(this).find('input:checked').val();
-				console.log("For question " + questionId + ", the value is: " + val);
-				answers[questionId] = val;
-			}).promise().done(function(){
-				console.log(answers);
-				model.setAgqQuestions (answers);
-				console.log("Done");
-			});
-*/
+		if (evaluationQuestions.length < 5 && importanceQuestions.length < 6) {
+			alert("Geef alstublieft voor alle vragen een voorkeur op!");
+			return;
+		}
+
+		if (evaluationQuestions.length == 5) {
+			evaluationCheck = true;
+		} else if (evaluationQuestions.length < 5 ) {
+			alert("Geef alstublieft voor alle vragen in de bovenste tabel een voorkeur op!");
+			return;
+		}
+
+		if (importanceQuestions.length == 6) {
+			importanceCheck = true;
+		} else if (importanceQuestions.length < 6 ) {
+			alert("Geef alstublieft voor alle vragen in de onderste tabel een voorkeur op!");
+			return;
+		}
+
+		//Only when both checks are true
+		if (evaluationCheck == true && importanceCheck == true){
 			model.setEvaluation(price, type, surface, bedrooms, surroundings, distance, other);
 			model.setLikert(evaluation1, evaluation2, evaluation3, evaluation4, evaluation5);
 			model.evaluationDone();
-		});
+		} else {
+			return;
+		}
+	});
  }

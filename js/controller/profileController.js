@@ -7,14 +7,13 @@ var ProfileController = function ( model, view ){
 		var family =  $( '#family').val();
 		var remarks = $( '#remarks').val();
 
-    if( gender != 0  && education != 0 && family != 0  && age.length != 0) {
+    if( gender != 0  && education != 0 && family != 0  && age.length != 0 && age > 0) {
       model.setDemoQuestions(age, gender, education, family, remarks);
       model.profileDone();
     } else {
       alert( 'U bent waarschijnlijk een vraag vergeten!' );
     }
 
-    //model.fetchRecommendations();
   });
 
 }

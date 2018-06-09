@@ -24,17 +24,14 @@ var InitialPreferencesController = function( model, view ){
 			var housesCheck = model.checkHouses(checkarray);
 			console.log("Housescheck: "+housesCheck);
 
-			model.setThree(checkarray);
-			model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
-			model.initialPreferencesDone();
 			//Controleren of de user alles heeft ingevuld & we een matchende gemeente hebben
-		 // if (cityCheck == true && housesCheck == true && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0){
-			// 	model.setThree(checkarray);
-			// 	model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
-			// 	model.initialPreferencesDone();
-			// } else {
-			// 	alert("Wij hebben helaas geen data voor de door u opgegeven gemeente. Probeer het svp nog een keer met een andere gemeente of een hoger budget, en controleer of u alle velden heeft ingevuld.");
-			// }
+		 if (cityCheck == true && housesCheck == true && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0){
+				model.setThree(checkarray);
+				model.setPreferences(city, budget, type, surface, bedrooms, surroundings, distance);
+				model.initialPreferencesDone();
+			} else {
+				alert("Wij hebben helaas geen data voor de door u opgegeven gemeente. Probeer het svp nog een keer met een andere gemeente of een hoger budget, en controleer of u alle velden heeft ingevuld.");
+			}
 
 		}, 50);
 	});

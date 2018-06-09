@@ -32,10 +32,10 @@ var Dilemma11Controller = function ( model, view ){
     });
 
     //If participants did not make a choice, let them know:
-    // if (checked!=1) {
-    //  alert("Geef alstublieft een voorkeur op!");
-    //  return;
-    // }
+    if (checked!=1) {
+     alert("Geef alstublieft een voorkeur op!");
+     return;
+    }
 
         model.dilemma11Done();
   });
