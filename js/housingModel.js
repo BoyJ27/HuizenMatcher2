@@ -214,30 +214,7 @@ var HousingModel = function( options ){
 
   }
 
-<<<<<<< HEAD
-  //Function to set the user's selected preferences in attributes
-=======
-  setCity = function(cityval) {
-    var city = cityval;
-    //console.log(city);
-    /*$.post("ajax/insertDemo.php",
-      {
-        userId: currentUserId,
-        age: age,
-        gender: gender,
-        experienceM: experienceM,
-        selfrate: selfrate,
-        experienceG: experienceG,
-        remarks: remarks,
-        email: email
-      }).done(function(){
-        console.log("The question + answer are saved in the DB");
-      });
-      */
 
-  }
-
->>>>>>> 97bec264144f61e8b83ca98fe688cc844ee49962
   setPreferences = function(cityval, budgetval, typeval, surfaceval, bedroomsval, surroundingsval, distanceval) {
     var city = cityval;
     var budget = budgetval;
