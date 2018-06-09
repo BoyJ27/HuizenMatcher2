@@ -284,7 +284,7 @@ var HousingModel = function( options ){
   // Order: price, type, surface, bedrooms, surroundings, distance to school, score
   setScores = function (pricevalA, typevalA, surfacevalA, bedroomsvalA, surroundingsvalA, distancevalA, scorevalA, pricevalB, typevalB, surfacevalB, bedroomsvalB, surroundingsvalB, distancevalB, scorevalB, pricevalC, typevalC, surfacevalC, bedroomsvalC, surroundingsvalC, distancevalC, scorevalC) {
     var houseA1 = pricevalA;
-    var typeA = typevalA;
+    var houseA2 = typevalA;
     var surfaceA = surfacevalA;
     var bedroomsA = bedroomsvalA;
     var surroundingsA = surroundingsvalA;
@@ -310,7 +310,7 @@ var HousingModel = function( options ){
     $.post("ajax/insertScores.php", {
       userId: currentUserId,
       priceA: houseA1,
-      typeA: typeA,
+      typeA: houseA2,
       surfaceA: surfaceA,
       bedroomsA: bedroomsA,
       surroundingsA: surroundingsA,
