@@ -185,10 +185,10 @@ var HousingModel = function( options ){
   // experimental condition.
 
   createUser = function(){
-    console.log("Creating user");
+    //console.log("Creating user");
     $.post( "ajax/insertUser.php").done( function( data ) {
         currentUserId = data;
-        console.log(currentUserId);
+        //console.log(currentUserId);
       });
   }
 
