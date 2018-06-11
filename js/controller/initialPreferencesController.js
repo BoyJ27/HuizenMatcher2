@@ -10,19 +10,19 @@ var InitialPreferencesController = function( model, view ){
 		var distance = $("#distance").val();
 
 		var cityCheck = model.checkCity(city);
-		// console.log("cityCheck: "+cityCheck);
+		console.log("cityCheck: "+cityCheck);
 
 		var checkarray = [];
 		//Get a list of house ID's in the municipality under the maxbudget
 		$.get("ajax/getHouseIDs.php", {gemeente: city, maxBudget: budget}).done(function (data) {
 			checkarray = JSON.parse(data);
-			// console.log("This is check array: "+checkarray);
+			console.log("This is check array: "+checkarray);
 		});
 
 		//Implement a timeout of 20ms to make sure that the list of ids is succesffully retrieved
 		setTimeout(function(){
 			var housesCheck = model.checkHouses(checkarray);
-			// console.log("Housescheck: "+housesCheck);
+			console.log("Housescheck: "+housesCheck);
 
 			//Controleren of de user alles heeft ingevuld & we een matchende gemeente hebben
 		 if (cityCheck == true && housesCheck == true && budget != 0 && type != 0 && surface != 0 && bedrooms != 0 && surroundings != 0 && distance != 0){

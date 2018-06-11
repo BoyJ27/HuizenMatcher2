@@ -42,7 +42,7 @@ var SetAController = function ( model, view ){
     if ( scoreCheck(scoreA) == true && scoreCheck(scoreB) == true && scoreCheck(scoreC) == true ) {
 
       //Write the attributes and the house scores to Database
-      model.insertScores(houseA1, houseA2, houseA3, houseA4, houseA5, houseA6, scoreA, houseB1, houseB2, houseB3, houseB4, houseB5, houseB6, scoreB, houseC1, houseC2, houseC3, houseC4, houseC5, houseC6, scoreC);
+      model.setScores(houseA1, houseA2, houseA3, houseA4, houseA5, houseA6, scoreA, houseB1, houseB2, houseB3, houseB4, houseB5, houseB6, scoreB, houseC1, houseC2, houseC3, houseC4, houseC5, houseC6, scoreC);
 
       //When done:
       model.setADone();

@@ -690,7 +690,7 @@ var HousingModel = function( options ){
   this.setDilemmaA                = setDilemmaA;
   this.setDilemmaB                = setDilemmaB;
   this.setDilemmaNo               = setDilemmaNo;
-  this.insertScores               = setScores;
+  this.setScores               = setScores;
 
   //Functions to perform input checks
   this.checkCity = checkCity;
