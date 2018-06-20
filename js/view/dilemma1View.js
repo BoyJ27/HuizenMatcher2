@@ -69,7 +69,7 @@ var Dilemma1View = function (model, container) {
 
 
 
-    if ( args == "dilemma1Done" ){
+    if ( args == "dilemma1Done" || args == "dilemma20Done" ){
       container.hide();
     }
   }
